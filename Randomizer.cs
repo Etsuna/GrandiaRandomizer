@@ -144,6 +144,7 @@ namespace GrandiaRandomizer
             }
 
             //doc
+            File.Copy(Path.Combine(resourcesDirectory, "ReadMe.txt"), Path.Combine(outDirectory, "ReadMe.txt"), true);
 
         }
     }
