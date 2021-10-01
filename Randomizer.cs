@@ -76,27 +76,12 @@ namespace GrandiaRandomizer
 
             string outputFinalFilesPath = Path.Combine(outDirectory);
 
-            List<byte> bitsItem = new List<byte>();
-            using (FileStream s = new FileStream(windtFile, FileMode.Open))
-            using (BinaryReader reader = new BinaryReader(s))
-            {
-                reader.BaseStream.Position = windtPosition;
-
-                int count = 1;
-
-                while (count != 512)
-                {
-                    byte[] Longbytes = reader.ReadBytes(28);
-                    string newPosition = reader.BaseStream.Position.ToString();
-                    File.WriteAllBytes($@"{itemsDirectory}\{count}.windt", Longbytes);
-                    count++;
-                }
-                string result = Encoding.UTF8.GetString(bitsItem.ToArray());
-            }
-
-            Extract.ExtractText1(text1File, text1Directory, text1Position, "text1");
-            Extract.ExtractText2(text1File, text2Directory, text2Position, "text2");
-            Extract.ExtractText3(text1File, text3Directory, text3Position, "text3");
+            
+            //Extract Items and Text from specific hexa position.
+            Extract.ExtractWindt(windtFile, itemsDirectory, windtPosition);
+            Extract.ExtractText1(text1File, text1Directory, text1Position);
+            Extract.ExtractText2(text1File, text2Directory, text2Position);
+            Extract.ExtractText3(text1File, text3Directory, text3Position);
 
             List<string> listToNotRandomize = new List<string>();
             listToNotRandomize = Items.ItemsList().Item1;
@@ -145,7 +130,6 @@ namespace GrandiaRandomizer
 
             //doc
             File.Copy(Path.Combine(resourcesDirectory, "ReadMe.txt"), Path.Combine(outDirectory, "ReadMe.txt"), true);
-
         }
     }
 }
