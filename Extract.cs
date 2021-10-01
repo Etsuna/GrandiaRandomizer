@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public class Extract
     {
-        public static void ExtractWindt(string windtFilePath, string outputPath, int hexaPosition)
+        public static void ExtractWindtAndStat(string windtFilePath, string outputPath, int hexaPosition, string extension)
         {
             List<byte> bitsItem = new List<byte>();
             using (FileStream s = new FileStream(windtFilePath, FileMode.Open))
@@ -20,14 +20,14 @@ namespace GrandiaRandomizer
                 {
                     byte[] Longbytes = reader.ReadBytes(28);
                     string newPosition = reader.BaseStream.Position.ToString();
-                    File.WriteAllBytes($@"{outputPath}\{count}.windt", Longbytes);
+                    File.WriteAllBytes($@"{outputPath}\{count}.{extension}", Longbytes);
                     count++;
                 }
                 string result = Encoding.UTF8.GetString(bitsItem.ToArray());
             }
         }
 
-        public static void ExtractText1(string text1Filepath, string outputPath, int hexaPosition)
+        public static void ExtractText1(string text1Filepath, string outputPath, int hexaPosition, string extension)
         {
             List<byte> bitesTextMAJ = new List<byte>();
             using (FileStream s = new FileStream(text1Filepath, FileMode.Open))
@@ -48,16 +48,16 @@ namespace GrandiaRandomizer
 
                     string newPosition = reader.BaseStream.Position.ToString();
 
-                    File.WriteAllBytes($@"{outputPath}\{count}.text1", bitesTextMAJ.ToArray());
+                    File.WriteAllBytes($@"{outputPath}\{count}.{extension}", bitesTextMAJ.ToArray());
                     count++;
                     bitesTextMAJ.Clear();
 
                 }
-                File.Delete(Path.Combine(outputPath, $"0.text1"));
+                File.Delete(Path.Combine(outputPath, $"0.{extension}"));
             }
         }
 
-        public static void ExtractText2(string text1FilePath, string outputPath, int hexaPosition)
+        public static void ExtractText2(string text1FilePath, string outputPath, int hexaPosition, string extension)
         {
             List<byte> bitesTextMin = new List<byte>();
             using (FileStream s = new FileStream(text1FilePath, FileMode.Open))
@@ -89,16 +89,16 @@ namespace GrandiaRandomizer
                     }
 
                     string newPosition = reader.BaseStream.Position.ToString();
-                    File.WriteAllBytes($@"{outputPath}\{count}.text2", bitesTextMin.ToArray());
+                    File.WriteAllBytes($@"{outputPath}\{count}.{extension}", bitesTextMin.ToArray());
                     count++;
                     bitesTextMin.Clear();
 
                 }
-                File.Delete(Path.Combine(outputPath, $"0.text2"));
+                File.Delete(Path.Combine(outputPath, $"0.{extension}"));
             }
         }
 
-        public static void ExtractText3(string text1FilePath, string outputPath, int hexaPosition)
+        public static void ExtractText3(string text1FilePath, string outputPath, int hexaPosition, string extension)
         {
             List<byte> bitesTextLong = new List<byte>();
             using (FileStream s = new FileStream(text1FilePath, FileMode.Open))
@@ -131,12 +131,12 @@ namespace GrandiaRandomizer
 
                     string newPosition = reader.BaseStream.Position.ToString();
 
-                    File.WriteAllBytes($@"{outputPath}\{count}.text3", bitesTextLong.ToArray());
+                    File.WriteAllBytes($@"{outputPath}\{count}.{extension}", bitesTextLong.ToArray());
                     count++;
                     bitesTextLong.Clear();
 
                 }
-                File.Delete(Path.Combine(outputPath, $"0.text3"));
+                File.Delete(Path.Combine(outputPath, $"0.{extension}"));
             }
         }
     }

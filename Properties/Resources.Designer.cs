@@ -91,6 +91,26 @@ namespace GrandiaRandomizer.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] footer3 {
+            get {
+                object obj = ResourceManager.GetObject("footer3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] footer4 {
+            get {
+                object obj = ResourceManager.GetObject("footer4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap GrandiaRandomizer {
@@ -141,6 +161,36 @@ namespace GrandiaRandomizer.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] header3 {
+            get {
+                object obj = ResourceManager.GetObject("header3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] header4 {
+            get {
+                object obj = ResourceManager.GetObject("header4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] STAT {
+            get {
+                object obj = ResourceManager.GetObject("STAT", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Steam_Grandia_1_Logo {
@@ -166,6 +216,16 @@ namespace GrandiaRandomizer.Properties {
         public static byte[] text11 {
             get {
                 object obj = ResourceManager.GetObject("text11", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] text2 {
+            get {
+                object obj = ResourceManager.GetObject("text2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

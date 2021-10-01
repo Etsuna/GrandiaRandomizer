@@ -4,9 +4,9 @@ namespace GrandiaRandomizer
 {
     public class HexaCorrection
     {
-        public static void HexaNumberCorrection(string movePath)
+        public static void HexaNumberCorrection(string movePath, string extension)
         {
-            var windtHexfiles = Directory.GetFiles(movePath, "*.windt");
+            var windtHexfiles = Directory.GetFiles(movePath, $"*.{extension}");
             foreach (string file in windtHexfiles)
             {
                 var fileName = Path.GetFileNameWithoutExtension(file);

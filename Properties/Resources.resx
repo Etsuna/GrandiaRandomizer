@@ -127,6 +127,12 @@
   <data name="footer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\headerfooter\windt\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="footer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\stat\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="footer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\text2\fr\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GrandiaRandomizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrandiaRandomizer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +148,15 @@
   <data name="header2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\headerfooter\windt\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="header3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\stat\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="header4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\text2\fr\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\stat.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Steam-Grandia-1-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Steam-Grandia-1-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +165,9 @@
   </data>
   <data name="text11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fr\text1.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="text2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\fr\text2.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="windt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\windt.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

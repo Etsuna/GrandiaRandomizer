@@ -50,7 +50,16 @@
     <None Update="Resources\FR\text1.bin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\FR\text2.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\GrandiaRandomizer.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\HEADERFOOTER\stat\footer.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\HEADERFOOTER\stat\header.bin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\HEADERFOOTER\text1\EN\footer.bin">
@@ -65,6 +74,12 @@
     <None Update="Resources\HEADERFOOTER\text1\FR\header.bin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\HEADERFOOTER\text2\FR\footer.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\HEADERFOOTER\text2\FR\header.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\HEADERFOOTER\windt\footer.bin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -74,12 +89,19 @@
     <None Update="Resources\ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\STAT.BIN">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Steam-Grandia-1-Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\windt.bin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\HEADERFOOTER\text2\" />
   </ItemGroup>
 
 </Project>
