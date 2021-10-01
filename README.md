@@ -14,7 +14,7 @@
 4. Attendez le/la popup en bas à droite de l'écran
 5. Aller dans le dossier "out"
 6. Copiez le fichier windt.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\FIELD\"
-7. Copiez le fichier text1.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\TEXT\EN\"
+7. Copiez le fichier text1.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\TEXT\FR\"
 
 ### Comment régénérer les fichiers originaux :
 1. Lancez GrandiaRandomizer.exe
@@ -23,7 +23,7 @@
 4. Attendez le/la popup en bas à droite de l'écran
 5. Aller dans le dossier "out"
 6. Copiez le fichier windt.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\FIELD\"
-7. Copiez le fichier text1.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\TEXT\EN\"
+7. Copiez le fichier text1.bin dans "\Steam\steamapps\common\GRANDIA HD Remaster\content\TEXT\FR\"
 
 
 ### ENGLISH :
