@@ -1,9 +1,16 @@
-# Grandia Randomizer Version Beta 0.1 
+# Grandia Randomizer Version Beta 0.2 
 
 - Creator : Etsuna
-- Twitter : https://twitter.com/etsunamattel
-- Twitch : https://www.twitch.tv/etsuna_ (with the underscore !)
+- [Twitter](https://twitter.com/etsunamattel)
+- [Twitch](https://www.twitch.tv/etsuna_)
 
+# WARNING
+
+Bug trouvé sur les combats du Randomizer, C'est pas un bug si gênant si vous faite attention.
+les objets sont originaux mais le titre et la description random, regardez bien la description, ça reste le bon objet (ne pas utiliser un objet nommé épée comme d'une potion...)
+
+Bug found on Randomizer fights, It's not such an annoying bug if you are careful.
+the items are original but the title and description are random, take a good look at the description, it's still the right item (do not use an item named sword as a potion ...)
 
 ### FRANÇAIS :
 
