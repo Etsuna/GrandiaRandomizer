@@ -27,8 +27,6 @@ namespace GrandiaRandomizer
             string outDirectory = Path.Combine(currentDirectory, "out");
 
             string moveDirectory = Path.Combine(buildDirectory, "MOVE");
-            string moveText1Directory = Path.Combine(buildDirectory, "MOVETEXT1");
-            string moveText2Directory = Path.Combine(buildDirectory, "MOVETEXT2");
             string moveItemDirectory = Path.Combine(buildDirectory, "ITEMS");
             string moveStatDirectory = Path.Combine(buildDirectory, "STAT");
 
@@ -40,9 +38,6 @@ namespace GrandiaRandomizer
             string text5Directory = Path.Combine(buildDirectory, "TEXT2", "TEXT2");
             string text6Directory = Path.Combine(buildDirectory, "TEXT2", "TEXT3");
 
-
-            string randoFileFileDirectory = Path.Combine(buildDirectory, "RANDOFINALFILE");
-
             string itemsDirectory = Path.Combine(buildDirectory, "ITEMS");
             string statDirectory = Path.Combine(buildDirectory, "STAT");
 
@@ -52,10 +47,11 @@ namespace GrandiaRandomizer
             string text2File = "";
 
             var windtPosition = 0x444C;
+            var statPosition = 0x1830;
+
             var text1Position = 0x0;
             var text2Position = 0x0;
             var text3Position = 0x0;
-            var statPosition = 0x1830;
 
             if (language == "Français")
             {
@@ -80,8 +76,6 @@ namespace GrandiaRandomizer
             }
 
             DeleteCreate.DeleteFolders(moveDirectory);
-            DeleteCreate.DeleteFolders(moveText1Directory);
-            DeleteCreate.DeleteFolders(moveText2Directory);
             DeleteCreate.DeleteFolders(moveItemDirectory);
             DeleteCreate.DeleteFolders(moveStatDirectory);
             DeleteCreate.DeleteFolders(statDirectory);
@@ -91,7 +85,6 @@ namespace GrandiaRandomizer
             DeleteCreate.DeleteFolders(text4Directory);
             DeleteCreate.DeleteFolders(text5Directory);
             DeleteCreate.DeleteFolders(text6Directory);
-            DeleteCreate.DeleteFolders(randoFileFileDirectory);
             DeleteCreate.DeleteFolders(itemsDirectory);
             DeleteCreate.DeleteFolders(outDirectory);
 
@@ -151,8 +144,6 @@ namespace GrandiaRandomizer
             shuffled.AddRange(shuffledbackup);
             RandomGenerator.RandomFiles(text6Directory, moveDirectory, "text6", shuffled);
 
-
-
             //rename files with this format "000"
             RenameFiles.RenameFilesWithZeros(moveDirectory);
 
@@ -171,15 +162,6 @@ namespace GrandiaRandomizer
             MergeFilesGeneration.MergeTextPart1(text2File, text1Position, moveDirectory, "text2.bin", "text4", language);
             MergeFilesGeneration.MergeTextPart2(text2File, text2Position, moveDirectory, "text2.bin", "text5", language);
             MergeFilesGeneration.MergeTextPart3(text2File, text3Position, moveDirectory, "text2.bin", "text6", language);
-
-
-            /*            MergeFilesGeneration.MergeTextPart1(headertext1, moveDirectory, outputFinalFilesPath, "text1", language);
-                        MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text2", language);
-                        MergeFilesGeneration.MergeTextPart3(footertext1, moveDirectory, outputFinalFilesPath, "text3", "text1.bin");
-
-                        MergeFilesGeneration.MergeTextPart1(headertext2, moveDirectory, outputFinalFilesPath, "text4", language);
-                        MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text5", language);
-                        MergeFilesGeneration.MergeTextPart3(footertext2, moveDirectory, outputFinalFilesPath, "text6", "text2.bin");*/
 
             //deleteBuildFolder
             if (Directory.Exists(buildDirectory))
