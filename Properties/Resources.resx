@@ -118,47 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="footer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text1\en\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="footer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text1\fr\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="footer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\windt\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="footer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\stat\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="footer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text2\fr\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="footer5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text2\en\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="GrandiaRandomizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrandiaRandomizer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GrandiaRandomizerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrandiaRandomizerIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text1\en\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="header1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text1\fr\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="header2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\windt\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="header3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\stat\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="header4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text2\fr\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="header5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\headerfooter\text2\en\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Steam-Grandia-1-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Steam-Grandia-1-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -47,7 +47,6 @@ namespace GrandiaRandomizer
                     }
 
                     string newPosition = reader.BaseStream.Position.ToString();
-
                     File.WriteAllBytes($@"{outputPath}\{count}.{extension}", bitesTextMAJ.ToArray());
                     count++;
                     bitesTextMAJ.Clear();

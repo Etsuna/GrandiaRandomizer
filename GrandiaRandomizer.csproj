@@ -47,42 +47,6 @@
     <None Update="Resources\GrandiaRandomizer.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Resources\HEADERFOOTER\stat\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\stat\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text1\EN\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text1\EN\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text1\FR\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text1\FR\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text2\EN\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text2\EN\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text2\FR\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\text2\FR\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\windt\footer.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\HEADERFOOTER\windt\header.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Resources\ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -92,7 +56,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\HEADERFOOTER\text2\" />
+    <Folder Include="Resources\HEADERFOOTER\" />
   </ItemGroup>
 
 </Project>

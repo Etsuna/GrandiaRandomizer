@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public class MergeFilesGeneration
     {
-        public static void MergeData(string dataFile, int hexaPosition, string movePath, string outputFinalFiles, string FileName, string extension)
+        public static void MergeData(string dataFile, int hexaPosition, string movePath, string FileName, string extension)
         {
             List<byte> dataWriteBytes = new List<byte>();
             var windtfilesz = Directory.GetFiles(movePath, $@"*.{extension}");
@@ -25,12 +25,10 @@ namespace GrandiaRandomizer
             }
         }
 
-        public static void MergeTextPart1(string headerTextFile, string movePath, string outputFinalFiles, string extension, string language)
+        public static void MergeTextPart1(string dataFile, int hexaPosition, string movePath, string FileName, string extension, string language)
         {
             //Generate text Part 1
-            var text1theader = File.ReadAllBytes(headerTextFile);
             List<byte> text1tWriteBytes = new List<byte>();
-            text1tWriteBytes.AddRange(text1theader);
             var text1files = Directory.GetFiles(movePath, $@"*.{extension}");
             foreach (string file in text1files)
             {
@@ -50,16 +48,20 @@ namespace GrandiaRandomizer
                 }
 
             }
-            File.WriteAllBytes($@"{outputFinalFiles}\text1Temp.bin", text1tWriteBytes.ToArray());
+
+            using (Stream s = File.Open(dataFile, FileMode.Open))
+            using (BinaryWriter writer = new BinaryWriter(s))
+            {
+                s.Position = hexaPosition;
+                s.Write(text1tWriteBytes.ToArray(), 0, text1tWriteBytes.ToArray().Length);
+                string result = Encoding.UTF8.GetString(text1tWriteBytes.ToArray());
+            }
         }
 
-        public static void MergeTextPart2(string movePath, string outputFinalFiles, string extension, string language)
+        public static void MergeTextPart2(string dataFile, int hexaPosition, string movePath, string FileName, string extension, string language)
         {
             //Generate text2
-            var text2theader = File.ReadAllBytes($@"{outputFinalFiles}\text1Temp.bin");
             List<byte> text2tWriteBytes = new List<byte>();
-            text2tWriteBytes.AddRange(text2theader);
-            text2tWriteBytes.Add(0x0);
             var text2files = Directory.GetFiles(movePath, $@"*.{extension}");
             foreach (string file in text2files)
             {
@@ -74,16 +76,20 @@ namespace GrandiaRandomizer
                 text2tWriteBytes.Add(0x0);
                 text2tWriteBytes.Add(0x0);
             }
-            File.WriteAllBytes($@"{outputFinalFiles}\text2Temp.bin", text2tWriteBytes.ToArray());
+
+            using (Stream s = File.Open(dataFile, FileMode.Open))
+            using (BinaryWriter writer = new BinaryWriter(s))
+            {
+                s.Position = hexaPosition;
+                s.Write(text2tWriteBytes.ToArray(), 0, text2tWriteBytes.ToArray().Length);
+                string result = Encoding.UTF8.GetString(text2tWriteBytes.ToArray());
+            }
         }
 
-        public static void MergeTextPart3(string footerTextFile, string movePath, string outputFinalFiles, string extension, string FileName)
+        public static void MergeTextPart3(string dataFile, int hexaPosition, string movePath, string FileName, string extension, string language)
         {
             //Generate text3
-            var text3theader = File.ReadAllBytes($@"{outputFinalFiles}\text2Temp.bin");
-            var text3footer = File.ReadAllBytes(footerTextFile);
             List<byte> text3tWriteBytes = new List<byte>();
-            text3tWriteBytes.AddRange(text3theader);
             var text3files = Directory.GetFiles(movePath, $@"*.{extension}");
             foreach (string file in text3files)
             {
@@ -91,17 +97,13 @@ namespace GrandiaRandomizer
                 text3tWriteBytes.Add(0x3);
                 text3tWriteBytes.AddRange(readbites);
             }
-            text3tWriteBytes.AddRange(text3footer);
-            File.WriteAllBytes($@"{outputFinalFiles}\{FileName}", text3tWriteBytes.ToArray());
 
-            if (File.Exists($@"{outputFinalFiles}\text1Temp.bin"))
+            using (Stream s = File.Open(dataFile, FileMode.Open))
+            using (BinaryWriter writer = new BinaryWriter(s))
             {
-                File.Delete($@"{outputFinalFiles}\text1Temp.bin");
-            }
-
-            if (File.Exists($@"{outputFinalFiles}\text2Temp.bin"))
-            {
-                File.Delete($@"{outputFinalFiles}\text2Temp.bin");
+                s.Position = hexaPosition;
+                s.Write(text3tWriteBytes.ToArray(), 0, text3tWriteBytes.ToArray().Length);
+                string result = Encoding.UTF8.GetString(text3tWriteBytes.ToArray());
             }
         }
     }

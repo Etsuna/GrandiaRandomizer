@@ -61,66 +61,6 @@ namespace GrandiaRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer {
-            get {
-                object obj = ResourceManager.GetObject("footer", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer1 {
-            get {
-                object obj = ResourceManager.GetObject("footer1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer2 {
-            get {
-                object obj = ResourceManager.GetObject("footer2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer3 {
-            get {
-                object obj = ResourceManager.GetObject("footer3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer4 {
-            get {
-                object obj = ResourceManager.GetObject("footer4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] footer5 {
-            get {
-                object obj = ResourceManager.GetObject("footer5", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap GrandiaRandomizer {
@@ -137,66 +77,6 @@ namespace GrandiaRandomizer.Properties {
             get {
                 object obj = ResourceManager.GetObject("GrandiaRandomizerIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header {
-            get {
-                object obj = ResourceManager.GetObject("header", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header1 {
-            get {
-                object obj = ResourceManager.GetObject("header1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header2 {
-            get {
-                object obj = ResourceManager.GetObject("header2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header3 {
-            get {
-                object obj = ResourceManager.GetObject("header3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header4 {
-            get {
-                object obj = ResourceManager.GetObject("header4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] header5 {
-            get {
-                object obj = ResourceManager.GetObject("header5", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

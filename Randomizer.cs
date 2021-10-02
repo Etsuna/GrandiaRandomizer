@@ -50,15 +50,6 @@ namespace GrandiaRandomizer
             string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
             string text1File = "";
             string text2File = "";
-            
-            string headerWindt = Path.Combine(resourcesDirectory, "HEADERFOOTER", "windt", "header.bin");
-            string footerWindt = Path.Combine(resourcesDirectory, "HEADERFOOTER", "windt", "footer.bin");
-            string headerStat = Path.Combine(resourcesDirectory, "HEADERFOOTER", "stat", "header.bin");
-            string footerStat = Path.Combine(resourcesDirectory, "HEADERFOOTER", "stat", "footer.bin");
-            string headertext1 = "";
-            string footertext1 = "";
-            string headertext2 = "";
-            string footertext2 = "";
 
             var windtPosition = 0x444C;
             var text1Position = 0x0;
@@ -74,12 +65,7 @@ namespace GrandiaRandomizer
                 text3Position = 0x542D;
 
                 text1File = Path.Combine(contentDirectory,"TEXT", "fr", "text1.bin");
-                headertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "FR", "header.bin");
-                footertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "FR", "footer.bin");
-
                 text2File = Path.Combine(contentDirectory, "TEXT", "fr", "text2.bin");
-                headertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "FR", "header.bin");
-                footertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "FR", "footer.bin");
             }
 
             if (language == "English")
@@ -90,14 +76,7 @@ namespace GrandiaRandomizer
                 text3Position = 0x4C6D;
 
                 text1File = Path.Combine(contentDirectory, "TEXT", "EN", "text1.bin");
-                text2File = Path.Combine(resourcesDirectory, "EN", "text2.bin");
-                headertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "header.bin");
-                footertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "footer.bin");
-
-                text2File = Path.Combine(contentDirectory, "TEXT", "text2.bin");
-                headertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "header.bin");
-                footertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "footer.bin");
-
+                text2File = Path.Combine(contentDirectory, "TEXT", "EN", "text2.bin");
             }
 
             DeleteCreate.DeleteFolders(moveDirectory);
@@ -182,16 +161,25 @@ namespace GrandiaRandomizer
             HexaCorrection.HexaNumberCorrection(moveDirectory, "stat");
 
             //Merge Files
-            MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, outputFinalFilesPath, "windt.bin", "windt");
-            MergeFilesGeneration.MergeData(statFile, statPosition, moveDirectory, outputFinalFilesPath, "STAT.bin", "stat");
+            MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, "windt.bin", "windt");
+            MergeFilesGeneration.MergeData(statFile, statPosition, moveDirectory, "STAT.bin", "stat");
 
-            MergeFilesGeneration.MergeTextPart1(headertext1, moveDirectory, outputFinalFilesPath, "text1", language);
-            MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text2", language);
-            MergeFilesGeneration.MergeTextPart3(footertext1, moveDirectory, outputFinalFilesPath, "text3", "text1.bin");
+            MergeFilesGeneration.MergeTextPart1(text1File, text1Position, moveDirectory, "text1.bin", "text1", language);
+            MergeFilesGeneration.MergeTextPart2(text1File, text2Position, moveDirectory, "text1.bin", "text2", language);
+            MergeFilesGeneration.MergeTextPart3(text1File, text3Position, moveDirectory, "text1.bin", "text3", language);
 
-            MergeFilesGeneration.MergeTextPart1(headertext2, moveDirectory, outputFinalFilesPath, "text4", language);
-            MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text5", language);
-            MergeFilesGeneration.MergeTextPart3(footertext2, moveDirectory, outputFinalFilesPath, "text6", "text2.bin");
+            MergeFilesGeneration.MergeTextPart1(text2File, text1Position, moveDirectory, "text2.bin", "text4", language);
+            MergeFilesGeneration.MergeTextPart2(text2File, text2Position, moveDirectory, "text2.bin", "text5", language);
+            MergeFilesGeneration.MergeTextPart3(text2File, text3Position, moveDirectory, "text2.bin", "text6", language);
+
+
+            /*            MergeFilesGeneration.MergeTextPart1(headertext1, moveDirectory, outputFinalFilesPath, "text1", language);
+                        MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text2", language);
+                        MergeFilesGeneration.MergeTextPart3(footertext1, moveDirectory, outputFinalFilesPath, "text3", "text1.bin");
+
+                        MergeFilesGeneration.MergeTextPart1(headertext2, moveDirectory, outputFinalFilesPath, "text4", language);
+                        MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text5", language);
+                        MergeFilesGeneration.MergeTextPart3(footertext2, moveDirectory, outputFinalFilesPath, "text6", "text2.bin");*/
 
             //deleteBuildFolder
             if (Directory.Exists(buildDirectory))
