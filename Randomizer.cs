@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
 namespace GrandiaRandomizer
 {
     public static class Randomizer
@@ -83,6 +80,10 @@ namespace GrandiaRandomizer
                 text2File = Path.Combine(resourcesDirectory, "EN", "text2.bin");
                 headertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "header.bin");
                 footertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "footer.bin");
+
+                text2File = Path.Combine(resourcesDirectory, "EN", "text2.bin");
+                headertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "header.bin");
+                footertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "footer.bin");
 
             }
 

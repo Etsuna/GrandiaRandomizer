@@ -133,6 +133,9 @@
   <data name="footer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\headerfooter\text2\fr\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="footer5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\text2\en\footer.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GrandiaRandomizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrandiaRandomizer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,6 +157,9 @@
   <data name="header4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\headerfooter\text2\fr\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="header5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\headerfooter\text2\en\header.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="STAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\stat.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -168,6 +174,9 @@
   </data>
   <data name="text2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fr\text2.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TEXT21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\en\text2.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="windt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\windt.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

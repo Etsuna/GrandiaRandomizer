@@ -41,7 +41,11 @@ namespace GrandiaRandomizer
             {
                 text1tWriteBytes.Add(0x0);
                 text1tWriteBytes.Add(0x0);
-                text1tWriteBytes.Add(0x0);
+                if(extension.Contains("text1"))
+                {
+                    text1tWriteBytes.Add(0x0);
+                }
+                
             }
             File.WriteAllBytes($@"{outputFinalFiles}\text1Temp.bin", text1tWriteBytes.ToArray());
         }
