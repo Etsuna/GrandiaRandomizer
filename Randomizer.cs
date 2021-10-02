@@ -13,9 +13,9 @@ namespace GrandiaRandomizer
             string contentDirectory = "";
 
             //Dev Folder
-            if (Directory.Exists(Path.Combine(currentDirectory, "content")))
+            if (Directory.Exists(Path.Combine(currentDirectory, @"../", "content")))
             {
-                contentDirectory = Path.Combine(currentDirectory, "content");
+                contentDirectory = Path.Combine(currentDirectory, @"../", "content");
             }
             else
             {
