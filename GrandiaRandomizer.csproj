@@ -11,8 +11,14 @@
     <StartupObject>GrandiaRandomizer.Program</StartupObject>
     <Copyright>Etsuna</Copyright>
     <PackageIcon>GrandiaRandomizer.jpg</PackageIcon>
-    <PackageIconUrl/>
+    <PackageIconUrl />
   </PropertyGroup>
+
+<ItemGroup>
+  <Compile Remove="Resources\HEADERFOOTER\**" />
+  <EmbeddedResource Remove="Resources\HEADERFOOTER\**" />
+  <None Remove="Resources\HEADERFOOTER\**" />
+</ItemGroup>
 
   <ItemGroup>
     <Compile Update="Program.cs">
@@ -48,6 +54,9 @@
     <None Update="ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\CLIPLY_372109260_TWITTER_LOGO_400.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\GrandiaRandomizer.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -55,12 +64,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Steam-Grandia-1-Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\tv-twitch-icon-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\HEADERFOOTER\" />
   </ItemGroup>
 
 </Project>

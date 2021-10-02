@@ -63,6 +63,16 @@ namespace GrandiaRandomizer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CLIPLY_372109260_TWITTER_LOGO_400 {
+            get {
+                object obj = ResourceManager.GetObject("CLIPLY_372109260_TWITTER_LOGO_400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap GrandiaRandomizer {
             get {
                 object obj = ResourceManager.GetObject("GrandiaRandomizer", resourceCulture);
@@ -86,6 +96,16 @@ namespace GrandiaRandomizer.Properties {
         public static System.Drawing.Bitmap Steam_Grandia_1_Logo {
             get {
                 object obj = ResourceManager.GetObject("Steam-Grandia-1-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tv_twitch_icon_1 {
+            get {
+                object obj = ResourceManager.GetObject("tv_twitch_icon_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
