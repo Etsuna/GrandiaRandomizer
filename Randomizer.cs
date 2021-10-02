@@ -9,6 +9,19 @@ namespace GrandiaRandomizer
         public static void RandomizerExecute(string language)
         {
             string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
+
+            string contentDirectory = "";
+
+            //Dev Folder
+            if (Directory.Exists(Path.Combine(currentDirectory, "content")))
+            {
+                contentDirectory = Path.Combine(currentDirectory, "content");
+            }
+            else
+            {
+                contentDirectory = Path.Combine(currentDirectory, @"../../../", "content");
+            }
+           
             string buildDirectory = Path.Combine(currentDirectory, "build");
             string resourcesDirectory = Path.Combine(currentDirectory, "Resources");
             string outDirectory = Path.Combine(currentDirectory, "out");
@@ -33,8 +46,8 @@ namespace GrandiaRandomizer
             string itemsDirectory = Path.Combine(buildDirectory, "ITEMS");
             string statDirectory = Path.Combine(buildDirectory, "STAT");
 
-            string windtFile = Path.Combine(resourcesDirectory, "windt.bin");
-            string statFile = Path.Combine(resourcesDirectory, "windt.bin");
+            string windtFile = Path.Combine(contentDirectory, "FIELD", "windt.bin");
+            string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
             string text1File = "";
             string text2File = "";
             
@@ -60,11 +73,11 @@ namespace GrandiaRandomizer
                 text2Position = 0x32C5;
                 text3Position = 0x542D;
 
-                text1File = Path.Combine(resourcesDirectory, "FR", "text1.bin");
+                text1File = Path.Combine(contentDirectory,"TEXT", "fr", "text1.bin");
                 headertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "FR", "header.bin");
                 footertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "FR", "footer.bin");
 
-                text2File = Path.Combine(resourcesDirectory, "FR", "text2.bin");
+                text2File = Path.Combine(contentDirectory, "TEXT", "fr", "text2.bin");
                 headertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "FR", "header.bin");
                 footertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "FR", "footer.bin");
             }
@@ -76,12 +89,12 @@ namespace GrandiaRandomizer
                 text2Position = 0x2FB1;
                 text3Position = 0x4C6D;
 
-                text1File = Path.Combine(resourcesDirectory, "EN", "text1.bin");
+                text1File = Path.Combine(contentDirectory, "TEXT", "EN", "text1.bin");
                 text2File = Path.Combine(resourcesDirectory, "EN", "text2.bin");
                 headertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "header.bin");
                 footertext1 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text1", "EN", "footer.bin");
 
-                text2File = Path.Combine(resourcesDirectory, "EN", "text2.bin");
+                text2File = Path.Combine(contentDirectory, "TEXT", "text2.bin");
                 headertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "header.bin");
                 footertext2 = Path.Combine(resourcesDirectory, "HEADERFOOTER", "text2", "EN", "footer.bin");
 
@@ -104,7 +117,6 @@ namespace GrandiaRandomizer
             DeleteCreate.DeleteFolders(outDirectory);
 
             string outputFinalFilesPath = Path.Combine(outDirectory);
-
             
             //Extract Items and Text from specific hexa position.
             Extract.ExtractWindtAndStat(windtFile, itemsDirectory, windtPosition, "windt");
@@ -170,8 +182,8 @@ namespace GrandiaRandomizer
             HexaCorrection.HexaNumberCorrection(moveDirectory, "stat");
 
             //Merge Files
-            MergeFilesGeneration.MergeData(headerWindt, footerWindt, moveDirectory, outputFinalFilesPath, "windt.bin", "windt");
-            MergeFilesGeneration.MergeData(headerStat, footerStat, moveDirectory, outputFinalFilesPath, "STAT.bin", "stat");
+            MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, outputFinalFilesPath, "windt.bin", "windt");
+            MergeFilesGeneration.MergeData(statFile, statPosition, moveDirectory, outputFinalFilesPath, "STAT.bin", "stat");
 
             MergeFilesGeneration.MergeTextPart1(headertext1, moveDirectory, outputFinalFilesPath, "text1", language);
             MergeFilesGeneration.MergeTextPart2(moveDirectory, outputFinalFilesPath, "text2", language);

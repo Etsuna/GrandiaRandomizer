@@ -201,72 +201,12 @@ namespace GrandiaRandomizer.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] STAT {
-            get {
-                object obj = ResourceManager.GetObject("STAT", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Steam_Grandia_1_Logo {
             get {
                 object obj = ResourceManager.GetObject("Steam-Grandia-1-Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] TEXT1 {
-            get {
-                object obj = ResourceManager.GetObject("TEXT1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] text11 {
-            get {
-                object obj = ResourceManager.GetObject("text11", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] text2 {
-            get {
-                object obj = ResourceManager.GetObject("text2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] TEXT21 {
-            get {
-                object obj = ResourceManager.GetObject("TEXT21", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        public static byte[] windt {
-            get {
-                object obj = ResourceManager.GetObject("windt", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }

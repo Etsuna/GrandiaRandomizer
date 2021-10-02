@@ -1,25 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace GrandiaRandomizer
 {
     public class MergeFilesGeneration
     {
-       public static void MergeData(string headerDataFile, string footerDataFile, string movePath, string outputFinalFiles, string FileName, string extension)
+        public static void MergeData(string dataFile, int hexaPosition, string movePath, string outputFinalFiles, string FileName, string extension)
         {
-            //Generate windt
-            var windtheader = File.ReadAllBytes(headerDataFile);
-            var windtfooter = File.ReadAllBytes(footerDataFile);
-            List<byte> windtWriteBytes = new List<byte>();
-            windtWriteBytes.AddRange(windtheader);
-            var windtfiles = Directory.GetFiles(movePath, $@"*.{extension}");
-            foreach (string file in windtfiles)
+            List<byte> dataWriteBytes = new List<byte>();
+            var windtfilesz = Directory.GetFiles(movePath, $@"*.{extension}");
+            foreach (string file in windtfilesz)
             {
                 var readbites = File.ReadAllBytes(file);
-                windtWriteBytes.AddRange(readbites);
+                dataWriteBytes.AddRange(readbites);
             }
-            windtWriteBytes.AddRange(windtfooter);
-            File.WriteAllBytes($@"{outputFinalFiles}\{FileName}", windtWriteBytes.ToArray());
+
+            using (Stream s = File.Open(dataFile, FileMode.Open))
+            using (BinaryWriter writer = new BinaryWriter(s))
+            {
+                s.Position = hexaPosition;
+                s.Write(dataWriteBytes.ToArray(), 0, dataWriteBytes.ToArray().Length);
+                string result = Encoding.UTF8.GetString(dataWriteBytes.ToArray());
+            }
         }
 
         public static void MergeTextPart1(string headerTextFile, string movePath, string outputFinalFiles, string extension, string language)
@@ -41,11 +44,11 @@ namespace GrandiaRandomizer
             {
                 text1tWriteBytes.Add(0x0);
                 text1tWriteBytes.Add(0x0);
-                if(extension.Contains("text1"))
+                if (extension.Contains("text1"))
                 {
                     text1tWriteBytes.Add(0x0);
                 }
-                
+
             }
             File.WriteAllBytes($@"{outputFinalFiles}\text1Temp.bin", text1tWriteBytes.ToArray());
         }
