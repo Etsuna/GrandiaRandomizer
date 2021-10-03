@@ -1,8 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Text.RegularExpressions;
+﻿using System;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
 
@@ -23,6 +19,8 @@ namespace GrandiaRandomizer
         private void button1_Click(object sender, EventArgs e)
         {
             var language = comboBox1.SelectedItem.ToString();
+
+            DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
             Randomizer.RandomizerExecute(language);
 
@@ -62,5 +60,31 @@ namespace GrandiaRandomizer
         {
             InternetBrowser.OpenInDefaultBrowser("https://twitter.com/etsunamattel");
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_Checked(object sender, EventArgs e)
+        {
+            bool debugMenuTrue = true;
+        }
+        private void checkBox1_Unchecked(object sender, EventArgs e)
+        {
+            bool debugMenuFalse = false;
+        }
+
+
     }
 }

@@ -11,6 +11,7 @@
 *.sln.docstates
 content/
 *.zip
+grandia.exe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
