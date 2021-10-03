@@ -1,4 +1,4 @@
-# Grandia Randomizer Version Beta 0.2 
+# Grandia Randomizer Version Beta 0.3 
 
 - Creator : Etsuna
 - [Twitter](https://twitter.com/etsunamattel)
