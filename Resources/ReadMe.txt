@@ -1,10 +1,15 @@
-﻿# Grandia Randomizer Version Beta 0.3 
+﻿# Grandia Randomizer Version Beta 0.4 
 
 - Creator : Etsuna
 - [Twitter](https://twitter.com/etsunamattel)
 - [Twitch](https://www.twitch.tv/etsuna_)
 
 # WARNING
+
+### UPDATE FOR THE BETA 0.3 TO 0.4 ! MISE A JOUR DE LA BETA 0.3 A LA 0.4 :
+I had a prohibited item in the list to randomizer, I think the bug.I think the bug came from there. If in doubt, follow the advice below while you get feedback
+
+J'avais un objet Prohibited dans la list à randomizer, je pense que le bug viens de là. Dans le doute, suivez les conseils plus bas le temps d'avoir des retours
 
 Some bugs for some seeds, I couldn't really determine why. Activate the debug menu to check your seed !
 
