@@ -9,7 +9,7 @@ namespace GrandiaRandomizer
         public static Tuple<List<string>, List<string>>  ItemsList()
         {
             //Do Not Random
-            int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 93, 275, 316, 438, 448, 470 };
+            int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 81, 93, 275, 316, 438, 448, 470 };
 
             //Do Not Random
             int[] itemKey_0000 = { 11, 13, 14 };
@@ -23,7 +23,7 @@ namespace GrandiaRandomizer
             int[] item_2000 = { 385, 386, 387, 388, 389, 390, 391, 392, 460, 461, 462, 475, 476, 477, 478, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508 };
 
             //ZERO Do Not Random
-            int[] zeroweapon_0871 = { 79, 81, 100, 103, 135, 152, 153 };
+            int[] zeroweapon_0871 = { 79, 100, 103, 135, 152, 153 };
 
             //ITEM
             
