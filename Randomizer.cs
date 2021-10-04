@@ -23,14 +23,17 @@ namespace GrandiaRandomizer
                 contentDirectory = Path.Combine(currentDirectory, @"../../../../", "content");
             }
 
+
             string buildDirectory = Path.Combine(currentDirectory, "build");
             string resourcesDirectory = Path.Combine(currentDirectory, "Resources");
             string outDirectory = Path.Combine(currentDirectory, "out");
+            string spoilLogDirectory = Path.Combine(currentDirectory, "SpoilLog");
+
 
             string moveDirectory = Path.Combine(buildDirectory, "MOVE");
             string moveItemDirectory = Path.Combine(buildDirectory, "ITEMS");
             string moveStatDirectory = Path.Combine(buildDirectory, "STAT");
-
+            
             string text1Directory = Path.Combine(buildDirectory, "TEXT1", "TEXT1");
             string text2Directory = Path.Combine(buildDirectory, "TEXT1", "TEXT2");
             string text3Directory = Path.Combine(buildDirectory, "TEXT1", "TEXT3");
@@ -44,6 +47,7 @@ namespace GrandiaRandomizer
 
             string bbgPath = Path.Combine(contentDirectory, "BATLE");
 
+            string spoilerLog = $@"{spoilLogDirectory}\SpoilerLog.csv";
             string windtFile = Path.Combine(contentDirectory, "FIELD", "windt.bin");
             string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
             string text1File = "";
@@ -88,6 +92,7 @@ namespace GrandiaRandomizer
             DeleteCreate.DeleteFolders(text6Directory);
             DeleteCreate.DeleteFolders(itemsDirectory);
             DeleteCreate.DeleteFolders(outDirectory);
+            DeleteCreate.DeleteFolders(spoilLogDirectory);
 
             string outputFinalFilesPath = Path.Combine(outDirectory);
 
@@ -122,7 +127,10 @@ namespace GrandiaRandomizer
 
             Random rng = new Random();
             List<string> shuffled = new List<string>();
+            //Randomizer
             shuffled = listToRandomise.OrderBy(item => rng.Next()).ToList();
+            //Dev NotRandomize
+            //shuffled = listToRandomise.OrderBy(item => item).ToList();
 
             List<string> shuffledbackup = new List<string>();
             shuffledbackup.AddRange(shuffled);
@@ -151,6 +159,17 @@ namespace GrandiaRandomizer
             //New Hex Number Correction After Random
             HexaCorrection.HexaNumberCorrection(moveDirectory, "windt");
             HexaCorrection.HexaNumberCorrection(moveDirectory, "stat");
+
+            //SpoilerLog
+            if (File.Exists($@"{spoilerLog}\SpoilerLog.csv"))
+            {
+                File.Delete(spoilerLog);
+            }
+            else
+            {
+                File.WriteAllText(spoilerLog, "ID;Name;Description");
+            }
+            SpoilerLogGeneration.SpoilerLog(spoilerLog, moveDirectory, "text2");
 
             //Merge Files
             MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, bbgPath, "windt");
