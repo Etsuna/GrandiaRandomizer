@@ -91,6 +91,16 @@ namespace GrandiaRandomizer.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] GrandiaRandomizerOriginalFiles {
+            get {
+                object obj = ResourceManager.GetObject("GrandiaRandomizerOriginalFiles", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Steam_Grandia_1_Logo {
