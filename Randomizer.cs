@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
 
 namespace GrandiaRandomizer
@@ -97,8 +96,7 @@ namespace GrandiaRandomizer
             string outputFinalFilesPath = Path.Combine(outDirectory);
 
             //backupOriginalFiles
-            string ZipSource = Path.Combine(resourcesDirectory, "GrandiaRandomizerOriginalFiles.zip");
-            ZipFile.ExtractToDirectory(ZipSource, contentDirectory, true);
+            ZipUnzip.UnzipOriginalFiles();
 
             //Extract Items and Text from specific hexa position.
             Extract.ExtractWindtAndStat(windtFile, itemsDirectory, windtPosition, "windt");

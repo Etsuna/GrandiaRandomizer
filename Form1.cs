@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
 
@@ -94,6 +96,30 @@ namespace GrandiaRandomizer
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var language = comboBox1.SelectedItem.ToString();
+
+            ZipUnzip.UnzipOriginalFiles();
+
+            DebugMenu.DebugMenuCheck(false);
+
+            PopupNotifier popup = new PopupNotifier();
+            popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
+            popup.TitleText = "Grandia Randomize Beta V0.1";
+
+            if (language == "English")
+            {
+                popup.ContentText = "Original files restored!";
+            }
+
+            if (language == "Français")
+            {
+                popup.ContentText = "Fichiers originaux réstaurés";
+            }
+            popup.Popup();
         }
     }
 }
