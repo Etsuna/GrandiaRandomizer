@@ -13,7 +13,7 @@
 4. Choisissez votre langue et choisissez si vous voulez randomizer les Oeufs de Mana. Le DebugMenu n'est pas nécessaire (et c'est tricher).
 5. Cliquez sur "Randomizer" pour créer des fichiers aléatoires.
 6. Attendez le/la popup en bas à droite de l'écran.
-7. Vous pouvez consulter le SpoilerLog dans le dossier GrandiaRandomizer/SpoilerLog/SpoilerLog.csv
+7. Vous pouvez consulter le SpoilerLog dans le dossier GrandiaRandomizer/SpoilerLog/SpoilerLog.csv (Les objets seront en Français, mais leurs emplacements seront en anglais! ça demande trop de boulot de tout traduire !)
 8. Vous pouvez restaurer les fichier originaux en cliquant sur "Restore Original Files".
 
 ### ENGLISH :
