@@ -22,7 +22,9 @@ namespace GrandiaRandomizer
 
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
-            Randomizer.RandomizerExecute(language);
+            bool manaEggs = checkBox2.Checked;
+
+            Randomizer.RandomizerExecute(language, manaEggs);
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
@@ -85,6 +87,18 @@ namespace GrandiaRandomizer
             bool debugMenuFalse = false;
         }
 
+        private void checkBox2_Checked(object sender, EventArgs e)
+        {
+            bool manaEggs = true;
+        }
+        private void checkBox2_Unchecked(object sender, EventArgs e)
+        {
+            bool manaEggs = false;
+        }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

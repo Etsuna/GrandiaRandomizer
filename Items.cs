@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public class Items
     {
-        public static Tuple<List<string>, List<string>>  ItemsList()
+        public static Tuple<List<string>, List<string>>  ItemsList(bool manaEggs)
         {
             //Do Not Random
             int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 81, 93, 275, 316, 438, 448, 470 };
@@ -23,10 +23,9 @@ namespace GrandiaRandomizer
             int[] item_2000 = { 385, 386, 387, 388, 389, 390, 391, 392, 460, 461, 462, 475, 476, 477, 478, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508 };
 
             //ZERO Do Not Random, 217 = ZeroShield, Not Available, 274 = Zero Boots, Not Available.
-            int[] zeroweapon_0871 = { 79, 81, 100, 103, 135, 152, 153, 217, 274 };
+            int[] zeroweapon_0871 = { 79, 100, 103, 135, 152, 153, 217, 274 };
 
             //ITEM
-            int[] item_8000 = { 395 };
             int[] item_8008 = { 315, 473 };
             int[] item_8060 = { 434, 435, 436, 437, 442 };
             int[] item_A000 = { 377, 378, 379, 380, 381, 382, 383, 384, 452, 453, 454, 455, 456, 457, 458, 459, 481, 482, 483, 484, 485, 486, 487, 488 };
@@ -62,6 +61,10 @@ namespace GrandiaRandomizer
 
             int[] jewel_E976 = { 276 };
 
+            //MAMAEGGS
+            int[] item_8000 = { 395 };
+
+
             List<string> listToNotRandomize = new List<string>();
             listToNotRandomize.AddRange(prohibited_0000.Select(x => x.ToString()));
             listToNotRandomize.AddRange(zeroweapon_0871.Select(x => x.ToString()));
@@ -76,7 +79,6 @@ namespace GrandiaRandomizer
             listToNotRandomize.AddRange(item_2000.Select(x => x.ToString()));
 
             List<string> listToRandomise = new List<string>();
-            listToRandomise.AddRange(item_8000.Select(x => x.ToString()));
             listToRandomise.AddRange(item_8008.Select(x => x.ToString()));
             listToRandomise.AddRange(item_8060.Select(x => x.ToString()));
             listToRandomise.AddRange(item_A000.Select(x => x.ToString()));
@@ -95,6 +97,16 @@ namespace GrandiaRandomizer
             listToRandomise.AddRange(shoes_8875.Select(x => x.ToString()));
             listToRandomise.AddRange(jewel_8876.Select(x => x.ToString()));
             listToRandomise.AddRange(jewel_E976.Select(x => x.ToString()));
+
+            
+            if(manaEggs)
+            {
+                listToRandomise.AddRange(item_8000.Select(x => x.ToString()));
+            }
+            else
+            {
+                listToNotRandomize.AddRange(item_8000.Select(x => x.ToString()));
+            }
 
             return Tuple.Create(listToNotRandomize, listToRandomise);
         }

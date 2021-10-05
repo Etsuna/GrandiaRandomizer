@@ -483,7 +483,7 @@ namespace GrandiaRandomizer
                 case 469: return "Not Available";
                 case 470: return "Not Used";
                 case 471: return "Find: Top of Tower of Temptation.";
-                case 472: return "Find; Tower of Temptation's Roof.";
+                case 472: return "Find: Tower of Temptation's Roof.";
                 case 473: return "Teleportation Room (Tower Of Temptation)";
                 case 474: return "Teleportation Room (Tower Of Temptation)";
                 case 475: return "Original Location";

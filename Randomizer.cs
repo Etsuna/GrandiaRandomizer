@@ -7,7 +7,7 @@ namespace GrandiaRandomizer
 {
     public static class Randomizer
     {
-        public static void RandomizerExecute(string language)
+        public static void RandomizerExecute(string language, bool manaEggs)
         {
             string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
 
@@ -22,7 +22,6 @@ namespace GrandiaRandomizer
             {
                 contentDirectory = Path.Combine(currentDirectory, @"../../../../", "content");
             }
-
 
             string buildDirectory = Path.Combine(currentDirectory, "build");
             string resourcesDirectory = Path.Combine(currentDirectory, "Resources");
@@ -108,10 +107,10 @@ namespace GrandiaRandomizer
             Extract.ExtractText3(text2File, text6Directory, text3Position, "text6");
 
             List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize = Items.ItemsList().Item1;
+            listToNotRandomize = Items.ItemsList(manaEggs).Item1;
 
             List<string> listToRandomise = new List<string>();
-            listToRandomise = Items.ItemsList().Item2;
+            listToRandomise = Items.ItemsList(manaEggs).Item2;
 
             foreach (var file in listToNotRandomize)
             {
@@ -169,7 +168,15 @@ namespace GrandiaRandomizer
             {
                 File.WriteAllText(spoilerLog, "ID;Name;Description");
             }
-            SpoilerLogGeneration.SpoilerLog(spoilerLog, moveDirectory, "text2");
+
+            switch(language)
+            {
+                case "Français": SpoilerLogGeneration.SpoilerLogFrenchCharactereCorrection(spoilerLog, moveDirectory, "text2");
+                    break;
+                case "English":  SpoilerLogGeneration.SpoilerLog(spoilerLog, moveDirectory, "text2");
+                    break;
+                default: break;
+            }
 
             //Merge Files
             MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, bbgPath, "windt");
