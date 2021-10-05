@@ -10,7 +10,8 @@
 *.userosscache
 *.sln.docstates
 content/
-*.zip
+GrandiaRandomizerOriginalFilesBackup.zip
+VersionRelease/
 grandia.exe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
