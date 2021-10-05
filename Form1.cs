@@ -48,11 +48,6 @@ namespace GrandiaRandomizer
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            InternetBrowser.OpenInDefaultBrowser("https://pool367.seedbox.fr/files/index.php/s/yNKoszYHCtwPQn2/download");
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             InternetBrowser.OpenInDefaultBrowser("https://www.twitch.tv/etsuna_");
