@@ -105,7 +105,7 @@ namespace GrandiaRandomizer.Properties {
         /// </summary>
         public static System.Drawing.Bitmap Steam_Grandia_1_Logo {
             get {
-                object obj = ResourceManager.GetObject("Steam-Grandia-1-Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Steam_Grandia_1_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

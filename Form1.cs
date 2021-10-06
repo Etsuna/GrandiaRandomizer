@@ -25,8 +25,9 @@ namespace GrandiaRandomizer
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
             bool manaEggs = checkBox2.Checked;
+            bool initialEquipments = checkBox3.Checked;
 
-            Randomizer.RandomizerExecute(language, manaEggs);
+            Randomizer.RandomizerExecute(language, manaEggs, initialEquipments);
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
@@ -77,25 +78,34 @@ namespace GrandiaRandomizer
 
         private void checkBox1_Checked(object sender, EventArgs e)
         {
-            bool debugMenuTrue = true;
+            
         }
         private void checkBox1_Unchecked(object sender, EventArgs e)
         {
-            bool debugMenuFalse = false;
+            
         }
 
         private void checkBox2_Checked(object sender, EventArgs e)
         {
-            bool manaEggs = true;
+            
         }
         private void checkBox2_Unchecked(object sender, EventArgs e)
         {
-            bool manaEggs = false;
+           
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox3_Checked(object sender, EventArgs e)
+        {
+            bool initialEquipments = true;
+        }
+        private void checkBox3_Unchecked(object sender, EventArgs e)
+        {
+            bool initialEquipments = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -120,6 +130,11 @@ namespace GrandiaRandomizer
                 popup.ContentText = "Fichiers originaux réstaurés";
             }
             popup.Popup();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

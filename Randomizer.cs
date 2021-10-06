@@ -7,7 +7,7 @@ namespace GrandiaRandomizer
 {
     public static class Randomizer
     {
-        public static void RandomizerExecute(string language, bool manaEggs)
+        public static void RandomizerExecute(string language, bool manaEggs, bool initialEquipments)
         {
             string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
 
@@ -110,10 +110,10 @@ namespace GrandiaRandomizer
             Extract.ExtractText3(text2File, text6Directory, text3Position, "text6");
 
             List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize = Items.ItemsList(manaEggs).Item1;
+            listToNotRandomize = Items.ItemsList(manaEggs, initialEquipments).Item1;
 
             List<string> listToRandomise = new List<string>();
-            listToRandomise = Items.ItemsList(manaEggs).Item2;
+            listToRandomise = Items.ItemsList(manaEggs, initialEquipments).Item2;
 
             foreach (var file in listToNotRandomize)
             {

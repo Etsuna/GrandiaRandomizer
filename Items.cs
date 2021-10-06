@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public class Items
     {
-        public static Tuple<List<string>, List<string>>  ItemsList(bool manaEggs)
+        public static Tuple<List<string>, List<string>> ItemsList(bool manaEggs, bool initialEquipments)
         {
             //Do Not Random
             int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 81, 93, 275, 316, 438, 448, 470 };
@@ -37,32 +37,41 @@ namespace GrandiaRandomizer
 
 
             //WEAPON 
-            int[] weapon_8871 = { 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 76, 77, 78, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 94, 95, 96, 99, 101, 102, 104, 105, 106, 107, 108, 109, 110, 111, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 134, 136, 137, 138, 139, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 154, 155, 156, 157, 158, 159, 160, 161, 162, 474, 479, 509, 510, 511 };
+            int[] weapon_8871 = { 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 76, 77, 78, 80, 82, 83, 84, 86, 87, 88, 89, 90, 91, 92, 94, 95, 96, 99, 102, 104, 105, 106, 107, 108, 109, 110, 111, 115, 116, 117, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 134, 137, 138, 139, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 154, 156, 157, 158, 159, 160, 161, 162, 474, 479, 509, 510, 511 };
 
-            int[] weapon_C971 = { 74, 75, 97, 98, 112, 113, 114, 118, 120, 129, 133, 140 };
+            int[] weapon_C971 = { 74, 75, 97, 98, 112, 113, 114, 118, 120, 129, 140 };
 
             int[] weapon_C871 = { 163 };
 
             //ARMOR
-            int[] armor_8874 = { 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195 };
+            int[] armor_8874 = { 166, 167, 168, 169, 170, 171, 172, 173, 175, 178, 180, 181, 183, 184, 185, 187, 188, 189, 190, 191, 192, 193, 194, 195 };
             int[] armor_8974 = { 196 };
 
             //SHIELD
-            int[] shield_8872 = { 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216 };
+            int[] shield_8872 = { 200, 201, 202, 203, 204, 205, 207, 208, 211, 213, 214, 215 };
 
             //HELMET
-            int[] helmet_8873 = { 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246 };
+            int[] helmet_8873 = { 220, 222, 223, 224, 225, 230, 231, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246 };
 
             //SHOES
-            int[] shoes_8875 = { 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273};
+            int[] shoes_8875 = { 249, 250, 251, 253, 254, 255, 258, 260, 261, 262, 263, 264, 267, 268, 269, 270, 271, 272, 273 };
 
             //JEWEL
-            int[] jewel_8876 = { 45, 47, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 440, 451, 463, 464, 465, 467, 468, 469, 471, 472 };
+            int[] jewel_8876 = { 45, 47, 278, 279, 281, 283, 284, 285, 286, 287, 288, 289, 290, 293, 294, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 440, 451, 463, 465, 467, 468, 469, 471, 472 };
 
             int[] jewel_E976 = { 276 };
 
             //MAMAEGGS
             int[] item_8000 = { 395 };
+
+            //Begins equipment
+            int[] begins_weapon_8871 = { 70, 85, 101, 119, 136, 143, 155 };
+            int[] begins_weapon_C971 = { 133 };
+            int[] begins_armor_8874 = { 164, 165, 174, 176, 177, 179, 182, 186 };
+            int[] begins_shield_8872 = { 197, 198, 199, 206, 209, 210, 212, 216 };
+            int[] begins_helmet_8873 = { 218, 219, 221, 226, 227, 228, 229, 234 };
+            int[] begins_shoes_8875 = { 247, 248, 252, 256, 257, 259, 265, 266 };
+            int[] begins_jewel_8876 = { 277, 280, 282, 291, 292, 295, 317, 464 };
 
 
             List<string> listToNotRandomize = new List<string>();
@@ -98,14 +107,34 @@ namespace GrandiaRandomizer
             listToRandomise.AddRange(jewel_8876.Select(x => x.ToString()));
             listToRandomise.AddRange(jewel_E976.Select(x => x.ToString()));
 
-            
-            if(manaEggs)
+            if (manaEggs)
             {
                 listToRandomise.AddRange(item_8000.Select(x => x.ToString()));
             }
             else
             {
                 listToNotRandomize.AddRange(item_8000.Select(x => x.ToString()));
+            }
+
+            if (initialEquipments)
+            {
+                listToRandomise.AddRange(begins_weapon_8871.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_weapon_C971.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_armor_8874.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_shield_8872.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_helmet_8873.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_shoes_8875.Select(x => x.ToString()));
+                listToRandomise.AddRange(begins_jewel_8876.Select(x => x.ToString()));
+            }
+            else
+            {
+                listToNotRandomize.AddRange(begins_weapon_8871.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_weapon_C971.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_armor_8874.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_shield_8872.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_helmet_8873.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_shoes_8875.Select(x => x.ToString()));
+                listToNotRandomize.AddRange(begins_jewel_8876.Select(x => x.ToString()));
             }
 
             return Tuple.Create(listToNotRandomize, listToRandomise);

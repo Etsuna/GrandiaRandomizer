@@ -60,6 +60,9 @@
     <None Update="Resources\GrandiaRandomizer.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\GrandiaRandomizerIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\GrandiaRandomizerOriginalFiles.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -67,7 +70,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Steam-Grandia-1-Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\tv-twitch-icon-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
