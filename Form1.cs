@@ -101,11 +101,11 @@ namespace GrandiaRandomizer
 
         private void checkBox3_Checked(object sender, EventArgs e)
         {
-            bool initialEquipments = true;
+            
         }
         private void checkBox3_Unchecked(object sender, EventArgs e)
         {
-            bool initialEquipments = false;
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
