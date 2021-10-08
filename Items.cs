@@ -21,6 +21,7 @@ namespace GrandiaRandomizer
             int[] itemKey_0874 = { 31 };
             int[] itemKey_4160 = { 10 };
             int[] item_2000 = { 385, 386, 387, 388, 389, 390, 391, 392, 460, 461, 462, 475, 476, 477, 478, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508 };
+            int[] item_A000 = { 377, 378, 379, 380, 381, 382, 383, 384, 452, 453, 454, 455, 456, 457, 458, 459, 481, 482, 483, 484, 485, 486, 487, 488 };
 
             //ZERO Do Not Random, 217 = ZeroShield, Not Available, 274 = Zero Boots, Not Available.
             int[] zeroweapon_0871 = { 79, 100, 103, 135, 152, 153, 217, 274 };
@@ -28,7 +29,6 @@ namespace GrandiaRandomizer
             //ITEM
             int[] item_8008 = { 315, 473 };
             int[] item_8060 = { 434, 435, 436, 437, 442 };
-            int[] item_A000 = { 377, 378, 379, 380, 381, 382, 383, 384, 452, 453, 454, 455, 456, 457, 458, 459, 481, 482, 483, 484, 485, 486, 487, 488 };
             int[] item_C100 = { 38, 46, 348, 350, 352, 353, 369, 370, 371, 393, 394, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 424, 426, 428, 447, 449, 450, 466 };
             int[] item_C120 = { 423 };
             int[] item_C160 = { 376 };
@@ -73,7 +73,6 @@ namespace GrandiaRandomizer
             int[] begins_shoes_8875 = { 247, 248, 252, 256, 257, 259, 265, 266 };
             int[] begins_jewel_8876 = { 277, 280, 282, 291, 292, 295, 317, 464 };
 
-
             List<string> listToNotRandomize = new List<string>();
             listToNotRandomize.AddRange(prohibited_0000.Select(x => x.ToString()));
             listToNotRandomize.AddRange(zeroweapon_0871.Select(x => x.ToString()));
@@ -86,11 +85,11 @@ namespace GrandiaRandomizer
             listToNotRandomize.AddRange(itemKey_0874.Select(x => x.ToString()));
             listToNotRandomize.AddRange(itemKey_4160.Select(x => x.ToString()));
             listToNotRandomize.AddRange(item_2000.Select(x => x.ToString()));
+            listToNotRandomize.AddRange(item_A000.Select(x => x.ToString()));
 
             List<string> listToRandomise = new List<string>();
             listToRandomise.AddRange(item_8008.Select(x => x.ToString()));
             listToRandomise.AddRange(item_8060.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_A000.Select(x => x.ToString()));
             listToRandomise.AddRange(item_C100.Select(x => x.ToString()));
             listToRandomise.AddRange(item_C120.Select(x => x.ToString()));
             listToRandomise.AddRange(item_C160.Select(x => x.ToString()));

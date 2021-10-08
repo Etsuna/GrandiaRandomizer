@@ -1,4 +1,4 @@
-# Grandia Randomizer Version 1.1
+# Grandia Randomizer Version 1.2
 
 - Creator : Etsuna
 - [Twitter](https://twitter.com/etsunamattel)
