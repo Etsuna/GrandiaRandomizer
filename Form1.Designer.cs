@@ -51,7 +51,7 @@ namespace GrandiaRandomizer
             this.comboBox1.Items.AddRange(new object[] {
             "Français",
             "English"});
-            this.comboBox1.Location = new System.Drawing.Point(211, 207);
+            this.comboBox1.Location = new System.Drawing.Point(209, 207);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 23);
             this.comboBox1.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace GrandiaRandomizer
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(153, 328);
+            this.button2.Location = new System.Drawing.Point(140, 325);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 44);
             this.button2.TabIndex = 0;
@@ -94,7 +94,7 @@ namespace GrandiaRandomizer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 210);
+            this.label1.Location = new System.Drawing.Point(138, 210);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace GrandiaRandomizer
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 292);
+            this.checkBox1.Location = new System.Drawing.Point(12, 292);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 19);
             this.checkBox1.TabIndex = 7;
@@ -115,7 +115,7 @@ namespace GrandiaRandomizer
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(14, 245);
+            this.checkBox2.Location = new System.Drawing.Point(12, 242);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(154, 19);
             this.checkBox2.TabIndex = 8;
@@ -125,7 +125,7 @@ namespace GrandiaRandomizer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 328);
+            this.button1.Location = new System.Drawing.Point(12, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 44);
             this.button1.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace GrandiaRandomizer
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(14, 267);
+            this.checkBox3.Location = new System.Drawing.Point(12, 267);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(191, 19);
             this.checkBox3.TabIndex = 11;
@@ -158,7 +158,7 @@ namespace GrandiaRandomizer
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(421, 381);
+            this.ClientSize = new System.Drawing.Size(424, 381);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
