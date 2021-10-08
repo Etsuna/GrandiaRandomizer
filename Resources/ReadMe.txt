@@ -1,4 +1,4 @@
-# Grandia Randomizer Version 1.0
+# Grandia Randomizer Version 1.1
 
 - Creator : Etsuna
 - [Twitter](https://twitter.com/etsunamattel)
@@ -10,7 +10,7 @@
 1. Copiez le dossier "GrandiaRandomizer" dans le dossier "\Steam\steamapps\common\GRANDIA HD Remaster\".
 2. Entrez dans le dossier "GrandiaRandomizer".
 3. Executez "GrandiaRandomizer.exe".
-4. Choisissez votre langue et choisissez si vous voulez randomizer les Oeufs de Mana. Le DebugMenu n'est pas nécessaire (et c'est tricher).
+4. Choisissez votre langue et choisissez si vous voulez randomizer les Oeufs de Mana et les équipements initiaux. Le DebugMenu n'est pas nécessaire (et c'est tricher).
 5. Cliquez sur "Randomizer" pour créer des fichiers aléatoires.
 6. Attendez le/la popup en bas à droite de l'écran.
 7. Vous pouvez consulter le SpoilerLog dans le dossier GrandiaRandomizer/SpoilerLog/SpoilerLog.csv (Les objets seront en Français, mais leurs emplacements seront en anglais! ça demande trop de boulot de tout traduire !)
@@ -22,7 +22,7 @@
 1. Copy the "GrandiaRandomizer" folder to the "\Steam\steamapps\common\GRANDIA HD Remaster\" folder.
 2. Enter the "GrandiaRandomizer" folder.
 3. Run "GrandiaRandomizer.exe".
-4. Choose your language and choose if you want to randomize the Mana Eggs. The DebugMenu is not necessary (and it is cheating).
+4. Choose your language and choose if you want to randomize the Mana Eggs and initial equipments. The DebugMenu is not necessary (and it is cheating).
 5. Click “Randomizer” to create random files.
 6. Wait for the popup at the bottom right of the screen.
 7. You can check the SpoilerLog in the GrandiaRandomizer / SpoilerLog / SpoilerLog.csv folder.
