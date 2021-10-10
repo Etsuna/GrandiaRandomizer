@@ -37,11 +37,27 @@ namespace GrandiaRandomizer
 
 
             //WEAPON 
-            int[] weapon_8871 = { 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 76, 77, 78, 80, 82, 83, 84, 86, 87, 88, 89, 90, 91, 92, 94, 95, 96, 99, 102, 104, 105, 106, 107, 108, 109, 110, 111, 115, 116, 117, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 134, 137, 138, 139, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 154, 156, 157, 158, 159, 160, 161, 162, 474, 479, 509, 510, 511 };
+            int[] weapon_Sword_8871 = { 80, 82, 83, 84, 87, 88, 89, 90, 91, 92, 94, 95, 96, 99, 509 };
+            int[] weapon_Sword_C971 = { 97, 98 };
 
-            int[] weapon_C971 = { 74, 75, 97, 98, 112, 113, 114, 118, 120, 129, 140 };
+            int[] weapon_Maces_Hammers_8871 = { 102, 104, 106, 107, 109, 110, 111, 116, 121, 122, 511 };
 
-            int[] weapon_C871 = { 163 };
+            int[] weapon_Rods_Staves_8871 = { 105, 115, 117, 474, 510 };
+            int[] weapon_Rods_Staves_C971 = { 112, 113, 114, 118, 120 };
+
+            int[] weapon_Axes_8871 = { 134, 123, 124, 125, 126, 128, 127, 130, 131, 132 };
+            int[] weapon_Axes_C971 = { 129 };
+
+            int[] weapon_Knives_8871 = { 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 76, 77, 78 };
+            int[] weapon_Knives_C971 = { 74, 75 };
+
+            int[] weapon_Whips_8871 = { 154, 156, 157, 158, 159, 160, 161, 162, 479 };
+            int[] weapon_Whips_C871 = { 163 };
+
+            int[] weapon_Bows_8871 = { 138, 139, 141, 142, 151 };
+            int[] weapon_Bows_C971 = { 140 };
+
+            int[] weapon_Shurikens_Boomerangs_8871 = { 86, 108, 137, 144, 149, 145, 146, 147, 148, 150 };
 
             //ARMOR
             int[] armor_8874 = { 166, 167, 168, 169, 170, 171, 172, 173, 175, 178, 180, 181, 183, 184, 185, 187, 188, 189, 190, 191, 192, 193, 194, 195 };
@@ -65,8 +81,14 @@ namespace GrandiaRandomizer
             int[] item_8000 = { 395 };
 
             //Begins equipment
-            int[] begins_weapon_8871 = { 70, 85, 101, 119, 136, 143, 155 };
-            int[] begins_weapon_C971 = { 133 };
+            int[] begins_weapon_Sword_8871 = { 85 };
+            int[] begins_weapon_Rods_Staves_8871 = { 101, 119 };
+            int[] begins_weapon_Axes_C971 = { 133 };
+            int[] begins_weapon_Knives_8871 = { 70 };
+            int[] begins_weapon_Whips_8871 = { 155 };
+            int[] begins_weapon_Bows_8871 = { 136 };
+            int[] begins_Shurikens_Boomerangsweapon_8871 = { 143 };
+
             int[] begins_armor_8874 = { 164, 165, 174, 176, 177, 179, 182, 186 };
             int[] begins_shield_8872 = { 197, 198, 199, 206, 209, 210, 212, 216 };
             int[] begins_helmet_8873 = { 218, 219, 221, 226, 227, 228, 229, 234 };

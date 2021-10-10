@@ -48,11 +48,13 @@ namespace GrandiaRandomizer
 
             string spoilerLog = $@"{spoilLogDirectory}\SpoilerLog.csv";
             string windtFile = Path.Combine(contentDirectory, "FIELD", "windt.bin");
+            string windtCD2File = Path.Combine(contentDirectory, "FIELD", "windt.bin.cd2");
             string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
             string text1File = "";
             string text2File = "";
 
             var windtPosition = 0x444C;
+            var windtCD2Position = 0x4450;
             var statPosition = 0x1830;
 
             var text1Position = 0x0;
@@ -185,6 +187,7 @@ namespace GrandiaRandomizer
 
             //Merge Files
             MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, bbgPath, "windt");
+            MergeFilesGeneration.MergeData(windtCD2File, windtCD2Position, moveDirectory, bbgPath, "windt");
             MergeFilesGeneration.MergeData(statFile, statPosition, moveDirectory, bbgPath, "stat");
 
             MergeFilesGeneration.MergeTextPart1(text1File, text1Position, moveDirectory, "text1", language);
