@@ -50,7 +50,7 @@ namespace GrandiaRandomizer
             this.comboBox1.Items.AddRange(new object[] {
             "Français",
             "English"});
-            this.comboBox1.Location = new System.Drawing.Point(209, 207);
+            this.comboBox1.Location = new System.Drawing.Point(338, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 23);
             this.comboBox1.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace GrandiaRandomizer
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(140, 325);
+            this.button2.Location = new System.Drawing.Point(179, 138);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 44);
             this.button2.TabIndex = 0;
@@ -70,7 +70,7 @@ namespace GrandiaRandomizer
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GrandiaRandomizer.Properties.Resources.tv_twitch_icon_1;
-            this.pictureBox1.Location = new System.Drawing.Point(367, 328);
+            this.pictureBox1.Location = new System.Drawing.Point(411, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +82,7 @@ namespace GrandiaRandomizer
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::GrandiaRandomizer.Properties.Resources.CLIPLY_372109260_TWITTER_LOGO_400;
-            this.pictureBox2.Location = new System.Drawing.Point(316, 328);
+            this.pictureBox2.Location = new System.Drawing.Point(360, 139);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@ namespace GrandiaRandomizer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(138, 210);
+            this.label1.Location = new System.Drawing.Point(267, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace GrandiaRandomizer
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 292);
+            this.checkBox1.Location = new System.Drawing.Point(267, 73);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 19);
             this.checkBox1.TabIndex = 7;
@@ -113,9 +113,9 @@ namespace GrandiaRandomizer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 325);
+            this.button1.Location = new System.Drawing.Point(12, 139);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 44);
+            this.button1.Size = new System.Drawing.Size(139, 44);
             this.button1.TabIndex = 9;
             this.button1.Text = "Restore Original Files";
             this.button1.UseVisualStyleBackColor = true;
@@ -126,14 +126,15 @@ namespace GrandiaRandomizer
             this.pictureBox3.Image = global::GrandiaRandomizer.Properties.Resources.Steam_Grandia_1_Logo;
             this.pictureBox3.Location = new System.Drawing.Point(12, 12);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(400, 181);
+            this.pictureBox3.Size = new System.Drawing.Size(249, 110);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(12, 267);
+            this.checkBox3.Location = new System.Drawing.Point(267, 48);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(191, 19);
             this.checkBox3.TabIndex = 11;
@@ -146,7 +147,7 @@ namespace GrandiaRandomizer
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(424, 381);
+            this.ClientSize = new System.Drawing.Size(468, 194);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
@@ -165,7 +166,7 @@ namespace GrandiaRandomizer
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grandia Randomizer 1.2";
+            this.Text = "Grandia Randomizer 1.3";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

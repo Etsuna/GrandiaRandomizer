@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.IO.Compression;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
 
@@ -30,7 +28,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize Beta V0.1";
+            popup.TitleText = "Grandia Randomize V1.3";
 
             if (language == "English")
             {
@@ -117,7 +115,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize Beta V0.1";
+            popup.TitleText = "Grandia Randomize V1.3";
 
             if (language == "English")
             {
