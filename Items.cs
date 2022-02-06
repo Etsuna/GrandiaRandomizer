@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public class Items
     {
-        public static Tuple<List<string>, List<string>> ItemsList(bool manaEggs, bool initialEquipments)
+        public static Tuple<List<string>, List<string>> ItemsList(bool initialEquipments)
         {
             //Do Not Random
             int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 81, 93, 275, 316, 438, 448, 470 };
@@ -30,10 +30,12 @@ namespace GrandiaRandomizer
             int[] item_8008 = { 315, 473 };
             int[] item_8060 = { 434, 435, 436, 437, 442 };
             int[] item_C100 = { 38, 46, 348, 350, 352, 353, 369, 370, 371, 393, 394, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 424, 426, 428, 447, 449, 450, 466 };
-            int[] item_C120 = { 423 };
-            int[] item_C160 = { 376 };
             int[] item_E100 = { 36, 42, 43, 44, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 349, 351, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 367, 368, 372, 373, 374, 375, 425, 427, 429, 439, 441, 443, 444, 445, 446 };
             int[] item_E120 = { 40, 333, 366 };
+
+            //UNIQUE ITEM, NO NEED TO RANDOMISE
+            int[] item_C120 = { 423 };
+            int[] item_C160 = { 376 };
 
 
             //WEAPON 
@@ -46,21 +48,25 @@ namespace GrandiaRandomizer
             int[] weapon_Rods_Staves_C971 = { 112, 113, 114, 118, 120 };
 
             int[] weapon_Axes_8871 = { 134, 123, 124, 125, 126, 128, 127, 130, 131, 132 };
+            //ONLY UNIQUE IF INITIAL WEAPON IS NOT CHECK
             int[] weapon_Axes_C971 = { 129 };
 
             int[] weapon_Knives_8871 = { 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 76, 77, 78 };
             int[] weapon_Knives_C971 = { 74, 75 };
 
             int[] weapon_Whips_8871 = { 154, 156, 157, 158, 159, 160, 161, 162, 479 };
+            //UNIQUE NO NEED TO BE RANDOMIZE
             int[] weapon_Whips_C871 = { 163 };
 
             int[] weapon_Bows_8871 = { 138, 139, 141, 142, 151 };
+            //UNIQUE NO NEED TO BE RANDOMIZE
             int[] weapon_Bows_C971 = { 140 };
 
             int[] weapon_Shurikens_Boomerangs_8871 = { 86, 108, 137, 144, 149, 145, 146, 147, 148, 150 };
 
             //ARMOR
             int[] armor_8874 = { 166, 167, 168, 169, 170, 171, 172, 173, 175, 178, 180, 181, 183, 184, 185, 187, 188, 189, 190, 191, 192, 193, 194, 195 };
+            //UNIQUE NO NEED TO BE RANDOMIZE
             int[] armor_8974 = { 196 };
 
             //SHIELD
@@ -74,10 +80,10 @@ namespace GrandiaRandomizer
 
             //JEWEL
             int[] jewel_8876 = { 45, 47, 278, 279, 281, 283, 284, 285, 286, 287, 288, 289, 290, 293, 294, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 440, 451, 463, 465, 467, 468, 469, 471, 472 };
-
+            //UNIQUE NO NEED TO BE RANDOMIZE
             int[] jewel_E976 = { 276 };
 
-            //MAMAEGGS
+            //TODO : MAMA EGGS NOT RANDOM FOR THE MOMENT. NEED TO FIND A WAY TO MANAGE THIS
             int[] item_8000 = { 395 };
 
             //Begins equipment
@@ -87,7 +93,7 @@ namespace GrandiaRandomizer
             int[] begins_weapon_Knives_8871 = { 70 };
             int[] begins_weapon_Whips_8871 = { 155 };
             int[] begins_weapon_Bows_8871 = { 136 };
-            int[] begins_Shurikens_Boomerangsweapon_8871 = { 143 };
+            int[] begins_weapon_Shurikens_Boomerangs_8871 = { 143 };
 
             int[] begins_armor_8874 = { 164, 165, 174, 176, 177, 179, 182, 186 };
             int[] begins_shield_8872 = { 197, 198, 199, 206, 209, 210, 212, 216 };
@@ -95,70 +101,187 @@ namespace GrandiaRandomizer
             int[] begins_shoes_8875 = { 247, 248, 252, 256, 257, 259, 265, 266 };
             int[] begins_jewel_8876 = { 277, 280, 282, 291, 292, 295, 317, 464 };
 
-            List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize.AddRange(prohibited_0000.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(zeroweapon_0871.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0000.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0060.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0076.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0871.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0872.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0873.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_0874.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(itemKey_4160.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(item_2000.Select(x => x.ToString()));
-            listToNotRandomize.AddRange(item_A000.Select(x => x.ToString()));
+            List<string> ListToNotRandomize = new List<string>();
+            ListToNotRandomize.AddRange(prohibited_0000.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(zeroweapon_0871.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0000.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0060.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0076.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0871.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0872.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0873.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_0874.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(itemKey_4160.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(item_2000.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(item_A000.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(item_C120.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(item_C160.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(weapon_Whips_C871.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(weapon_Bows_C971.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(armor_8974.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(jewel_E976.Select(x => x.ToString()));
+            ListToNotRandomize.AddRange(item_8000.Select(x => x.ToString()));
 
-            List<string> listToRandomise = new List<string>();
-            listToRandomise.AddRange(item_8008.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_8060.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_C100.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_C120.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_C160.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_E100.Select(x => x.ToString()));
-            listToRandomise.AddRange(item_E120.Select(x => x.ToString()));
-            listToRandomise.AddRange(weapon_8871.Select(x => x.ToString()));
-            listToRandomise.AddRange(weapon_C971.Select(x => x.ToString()));
-            listToRandomise.AddRange(weapon_C871.Select(x => x.ToString()));
-            listToRandomise.AddRange(armor_8874.Select(x => x.ToString()));
-            listToRandomise.AddRange(armor_8974.Select(x => x.ToString()));
-            listToRandomise.AddRange(shield_8872.Select(x => x.ToString()));
-            listToRandomise.AddRange(helmet_8873.Select(x => x.ToString()));
-            listToRandomise.AddRange(shoes_8875.Select(x => x.ToString()));
-            listToRandomise.AddRange(jewel_8876.Select(x => x.ToString()));
-            listToRandomise.AddRange(jewel_E976.Select(x => x.ToString()));
 
-            if (manaEggs)
-            {
-                listToRandomise.AddRange(item_8000.Select(x => x.ToString()));
-            }
-            else
-            {
-                listToNotRandomize.AddRange(item_8000.Select(x => x.ToString()));
-            }
+            //LIST ITEM
+            List<string> ListToRandomise_item_8008 = new List<string>();
+            ListToRandomise_item_8008.AddRange(item_8008.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_item_8060 = new List<string>();
+            ListToRandomise_item_8060.AddRange(item_8060.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_item_C100 = new List<string>();
+            ListToRandomise_item_C100.AddRange(item_C100.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_item_E100 = new List<string>();
+            ListToRandomise_item_E100.AddRange(item_E100.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_item_E120 = new List<string>();
+            ListToRandomise_item_E120.AddRange(item_E120.Select(x => x.ToString()));
+
+            //LIST WEAPON
+            List<string> ListToRandomise_Weapon_Sword_8871 = new List<string>();
+            ListToRandomise_Weapon_Sword_8871.AddRange(weapon_Sword_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Sword_C971 = new List<string>();
+            ListToRandomise_Weapon_Sword_C971.AddRange(weapon_Sword_C971.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Maces_Hammers_8871 = new List<string>();
+            ListToRandomise_Weapon_Maces_Hammers_8871.AddRange(weapon_Maces_Hammers_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Rods_Staves_8871 = new List<string>();
+            ListToRandomise_Weapon_Rods_Staves_8871.AddRange(weapon_Rods_Staves_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Rods_Staves_C971 = new List<string>();
+            ListToRandomise_Weapon_Rods_Staves_C971.AddRange(weapon_Rods_Staves_C971.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Axes_8871 = new List<string>();
+            ListToRandomise_Weapon_Axes_8871.AddRange(weapon_Axes_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Knives_8871 = new List<string>();
+            ListToRandomise_Weapon_Knives_8871.AddRange(weapon_Knives_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Knives_C971 = new List<string>();
+            ListToRandomise_Weapon_Knives_C971.AddRange(weapon_Knives_C971.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Whips_8871 = new List<string>();
+            ListToRandomise_Weapon_Whips_8871.AddRange(weapon_Whips_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Bows_8871 = new List<string>();
+            ListToRandomise_Weapon_Bows_8871.AddRange(weapon_Bows_8871.Select(x => x.ToString()));
+
+            List<string> ListToRandomise_Weapon_Shurikens_Boomerangs_8871 = new List<string>();
+            ListToRandomise_Weapon_Shurikens_Boomerangs_8871.AddRange(weapon_Shurikens_Boomerangs_8871.Select(x => x.ToString()));
+
+            //LIST ARMOR
+            List<string> ListToRandomise_Armor_8874 = new List<string>();
+            ListToRandomise_Armor_8874.AddRange(armor_8874.Select(x => x.ToString()));
+
+            //LIST SHIELD
+            List<string> ListToRandomise_Shield_8872 = new List<string>();
+            ListToRandomise_Shield_8872.AddRange(shield_8872.Select(x => x.ToString()));
+
+            //LIST HELMET
+            List<string> ListToRandomise_Helmet_8873 = new List<string>();
+            ListToRandomise_Helmet_8873.AddRange(helmet_8873.Select(x => x.ToString()));
+
+            //LIST SHOES
+            List<string> ListToRandomise_Shoes_8875 = new List<string>();
+            ListToRandomise_Shoes_8875.AddRange(shoes_8875.Select(x => x.ToString()));
+
+            //LIST JEWEL
+            List<string> ListToRandomise_Jewel_8876 = new List<string>();
+            ListToRandomise_Jewel_8876.AddRange(jewel_8876.Select(x => x.ToString()));
+
+
+            List<string> ListToRandomise_Weapon_Axes_C971 = new List<string>();
 
             if (initialEquipments)
             {
-                listToRandomise.AddRange(begins_weapon_8871.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_weapon_C971.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_armor_8874.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_shield_8872.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_helmet_8873.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_shoes_8875.Select(x => x.ToString()));
-                listToRandomise.AddRange(begins_jewel_8876.Select(x => x.ToString()));
+                //WEAPON
+                ListToRandomise_Weapon_Sword_8871.AddRange(begins_weapon_Sword_8871.Select(x => x.ToString()));
+                ListToRandomise_Weapon_Rods_Staves_8871.AddRange(begins_weapon_Rods_Staves_8871.Select(x => x.ToString()));
+
+                //SPECIAL CASE FOR THIS
+                ListToRandomise_Weapon_Axes_C971.AddRange(weapon_Axes_C971.Select(x => x.ToString()));
+                ListToRandomise_Weapon_Axes_C971.AddRange(begins_weapon_Axes_C971.Select(x => x.ToString()));
+
+                ListToRandomise_Weapon_Knives_8871.AddRange(begins_weapon_Knives_8871.Select(x => x.ToString()));
+                ListToRandomise_Weapon_Whips_8871.AddRange(begins_weapon_Whips_8871.Select(x => x.ToString()));
+                ListToRandomise_Weapon_Bows_8871.AddRange(begins_weapon_Bows_8871.Select(x => x.ToString()));
+                ListToRandomise_Weapon_Shurikens_Boomerangs_8871.AddRange(begins_weapon_Shurikens_Boomerangs_8871.Select(x => x.ToString()));
+
+
+                //OTHER STUFF
+                ListToRandomise_Armor_8874.AddRange(begins_armor_8874.Select(x => x.ToString()));
+                ListToRandomise_Shield_8872.AddRange(begins_shield_8872.Select(x => x.ToString()));
+                ListToRandomise_Helmet_8873.AddRange(begins_helmet_8873.Select(x => x.ToString()));
+                ListToRandomise_Shoes_8875.AddRange(begins_shoes_8875.Select(x => x.ToString()));
+                ListToRandomise_Jewel_8876.AddRange(begins_jewel_8876.Select(x => x.ToString()));
             }
             else
             {
-                listToNotRandomize.AddRange(begins_weapon_8871.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_weapon_C971.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_armor_8874.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_shield_8872.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_helmet_8873.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_shoes_8875.Select(x => x.ToString()));
-                listToNotRandomize.AddRange(begins_jewel_8876.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Sword_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Rods_Staves_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Axes_C971.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(weapon_Axes_C971.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Knives_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Whips_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Bows_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_weapon_Shurikens_Boomerangs_8871.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_armor_8874.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_shield_8872.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_helmet_8873.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_shoes_8875.Select(x => x.ToString()));
+                ListToNotRandomize.AddRange(begins_jewel_8876.Select(x => x.ToString()));
             }
 
-            return Tuple.Create(listToNotRandomize, listToRandomise);
+            Random rng = new Random();
+            List<string> shuffled = new List<string>();
+            //RANDOM ITEMS
+            shuffled.AddRange(ListToRandomise_item_8008.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_item_8060.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_item_C100.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_item_E100.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_item_E120.OrderBy(item => rng.Next()).ToList());
+
+
+            //RANDOM WEAPON
+            shuffled.AddRange(ListToRandomise_Weapon_Sword_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Sword_C971.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Maces_Hammers_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Rods_Staves_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Rods_Staves_C971.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Axes_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Knives_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Knives_C971.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Whips_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Bows_8871.OrderBy(item => rng.Next()).ToList());
+            shuffled.AddRange(ListToRandomise_Weapon_Shurikens_Boomerangs_8871.OrderBy(item => rng.Next()).ToList());
+            if(ListToRandomise_Weapon_Axes_C971.Count > 0)
+            {
+                shuffled.AddRange(ListToRandomise_Weapon_Axes_C971.OrderBy(item => rng.Next()).ToList());
+            }
+
+            //RANDOM ARMOR
+            shuffled.AddRange(ListToRandomise_Armor_8874.OrderBy(item => rng.Next()).ToList());
+
+            //RANDOM SHIELD
+            shuffled.AddRange(ListToRandomise_Shield_8872.OrderBy(item => rng.Next()).ToList());
+
+            //RANDOM HELMET
+            shuffled.AddRange(ListToRandomise_Helmet_8873.OrderBy(item => rng.Next()).ToList());
+
+            //RANDOM SHOES
+            shuffled.AddRange(ListToRandomise_Shoes_8875.OrderBy(item => rng.Next()).ToList());
+
+            //RANDOM JEWEL
+            shuffled.AddRange(ListToRandomise_Jewel_8876.OrderBy(item => rng.Next()).ToList());
+            //Dev NotRandomize
+            //shuffled = listToRandomise.OrderBy(item => item).ToList();
+
+
+            return Tuple.Create(ListToNotRandomize, shuffled);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace GrandiaRandomizer
 {
     public static class Randomizer
     {
-        public static void RandomizerExecute(string language, bool manaEggs, bool initialEquipments)
+        public static void RandomizerExecute(string language, bool initialEquipments)
         {
             string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
 
@@ -112,10 +112,10 @@ namespace GrandiaRandomizer
             Extract.ExtractText3(text2File, text6Directory, text3Position, "text6");
 
             List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize = Items.ItemsList(manaEggs, initialEquipments).Item1;
+            listToNotRandomize = Items.ItemsList(initialEquipments).Item1;
 
-            List<string> listToRandomise = new List<string>();
-            listToRandomise = Items.ItemsList(manaEggs, initialEquipments).Item2;
+            List<string> shuffled = new List<string>();
+            shuffled = Items.ItemsList(initialEquipments).Item2;
 
             foreach (var file in listToNotRandomize)
             {
@@ -128,13 +128,6 @@ namespace GrandiaRandomizer
                 File.Move($@"{text5Directory}\{file}.text5", $@"{moveDirectory}\{file}.text5");
                 File.Move($@"{text6Directory}\{file}.text6", $@"{moveDirectory}\{file}.text6");
             }
-
-            Random rng = new Random();
-            List<string> shuffled = new List<string>();
-            //Randomizer
-            shuffled = listToRandomise.OrderBy(item => rng.Next()).ToList();
-            //Dev NotRandomize
-            //shuffled = listToRandomise.OrderBy(item => item).ToList();
 
             List<string> shuffledbackup = new List<string>();
             shuffledbackup.AddRange(shuffled);

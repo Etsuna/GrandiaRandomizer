@@ -24,10 +24,9 @@ namespace GrandiaRandomizer
 
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
-            bool manaEggs = checkBox2.Checked;
             bool initialEquipments = checkBox3.Checked;
 
-            Randomizer.RandomizerExecute(language, manaEggs, initialEquipments);
+            Randomizer.RandomizerExecute(language, initialEquipments);
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
