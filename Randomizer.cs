@@ -112,10 +112,8 @@ namespace GrandiaRandomizer
             Extract.ExtractText3(text2File, text6Directory, text3Position, "text6");
 
             List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize = Items.ItemsList(initialEquipments).Item1;
+            listToNotRandomize = Items.ItemsList(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, initialEquipments);
 
-            List<string> shuffled = new List<string>();
-            shuffled = Items.ItemsList(initialEquipments).Item2;
 
             foreach (var file in listToNotRandomize)
             {
@@ -129,26 +127,7 @@ namespace GrandiaRandomizer
                 File.Move($@"{text6Directory}\{file}.text6", $@"{moveDirectory}\{file}.text6");
             }
 
-            List<string> shuffledbackup = new List<string>();
-            shuffledbackup.AddRange(shuffled);
-
-            RandomGenerator.RandomFiles(moveItemDirectory, moveDirectory, "windt", shuffled);
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(moveStatDirectory, moveDirectory, "stat", shuffled);
-
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text1Directory, moveDirectory, "text1", shuffled);
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text2Directory, moveDirectory, "text2", shuffled);
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text3Directory, moveDirectory, "text3", shuffled);
-
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text4Directory, moveDirectory, "text4", shuffled);
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text5Directory, moveDirectory, "text5", shuffled);
-            shuffled.AddRange(shuffledbackup);
-            RandomGenerator.RandomFiles(text6Directory, moveDirectory, "text6", shuffled);
+            List<string> shuffled = new List<string>();
 
             //rename files with this format "000"
             RenameFiles.RenameFilesWithZeros(moveDirectory);

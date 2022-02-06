@@ -6,7 +6,8 @@ namespace GrandiaRandomizer
 {
     public class Items
     {
-        public static Tuple<List<string>, List<string>> ItemsList(bool initialEquipments)
+        public static List<string> ItemsList(string moveItemDirectory, string moveDirectory, string moveStatDirectory, string text1Directory, string text2Directory, string text3Directory,
+            string text4Directory, string text5Directory, string text6Directory, bool initialEquipments)
         {
             //Do Not Random
             int[] prohibited_0000 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 81, 93, 275, 316, 438, 448, 470 };
@@ -36,7 +37,6 @@ namespace GrandiaRandomizer
             //UNIQUE ITEM, NO NEED TO RANDOMISE
             int[] item_C120 = { 423 };
             int[] item_C160 = { 376 };
-
 
             //WEAPON 
             int[] weapon_Sword_8871 = { 80, 82, 83, 84, 87, 88, 89, 90, 91, 92, 94, 95, 96, 99, 509 };
@@ -236,52 +236,75 @@ namespace GrandiaRandomizer
                 ListToNotRandomize.AddRange(begins_jewel_8876.Select(x => x.ToString()));
             }
 
-            Random rng = new Random();
-            List<string> shuffled = new List<string>();
             //RANDOM ITEMS
-            shuffled.AddRange(ListToRandomise_item_8008.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_item_8060.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_item_C100.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_item_E100.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_item_E120.OrderBy(item => rng.Next()).ToList());
-
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_item_8008);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_item_8060);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_item_C100);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_item_E100);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_item_E120);
 
             //RANDOM WEAPON
-            shuffled.AddRange(ListToRandomise_Weapon_Sword_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Sword_C971.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Maces_Hammers_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Rods_Staves_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Rods_Staves_C971.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Axes_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Knives_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Knives_C971.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Whips_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Bows_8871.OrderBy(item => rng.Next()).ToList());
-            shuffled.AddRange(ListToRandomise_Weapon_Shurikens_Boomerangs_8871.OrderBy(item => rng.Next()).ToList());
-            if(ListToRandomise_Weapon_Axes_C971.Count > 0)
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Sword_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Sword_C971);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Maces_Hammers_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Rods_Staves_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Rods_Staves_C971);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Axes_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Knives_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Knives_C971);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Whips_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Bows_8871);
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Shurikens_Boomerangs_8871);
+
+            if (ListToRandomise_Weapon_Axes_C971.Count > 0)
             {
-                shuffled.AddRange(ListToRandomise_Weapon_Axes_C971.OrderBy(item => rng.Next()).ToList());
+                RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Weapon_Axes_C971);
             }
 
             //RANDOM ARMOR
-            shuffled.AddRange(ListToRandomise_Armor_8874.OrderBy(item => rng.Next()).ToList());
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Armor_8874);
 
             //RANDOM SHIELD
-            shuffled.AddRange(ListToRandomise_Shield_8872.OrderBy(item => rng.Next()).ToList());
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Shield_8872);
 
             //RANDOM HELMET
-            shuffled.AddRange(ListToRandomise_Helmet_8873.OrderBy(item => rng.Next()).ToList());
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Helmet_8873);
 
             //RANDOM SHOES
-            shuffled.AddRange(ListToRandomise_Shoes_8875.OrderBy(item => rng.Next()).ToList());
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Shoes_8875);
 
             //RANDOM JEWEL
-            shuffled.AddRange(ListToRandomise_Jewel_8876.OrderBy(item => rng.Next()).ToList());
+            RandomeGeneeatorAndMove(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, ListToRandomise_Jewel_8876);
             //Dev NotRandomize
             //shuffled = listToRandomise.OrderBy(item => item).ToList();
 
 
-            return Tuple.Create(ListToNotRandomize, shuffled);
+            return ListToNotRandomize;
+        }
+
+        private static void RandomeGeneeatorAndMove(string moveItemDirectory, string moveDirectory, string moveStatDirectory, string text1Directory, string text2Directory, string text3Directory, string text4Directory, string text5Directory, string text6Directory, List<string> ListToRandomise)
+        {
+            Random rng = new Random();
+            List<string> RandomFile = new List<string>();
+            RandomFile = ListToRandomise.OrderBy(item => rng.Next()).ToList();
+            List<string> shuffledbackup = new List<string>();
+            shuffledbackup.AddRange(RandomFile);
+
+            RandomGenerator.RandomFiles(moveItemDirectory, moveDirectory, "windt", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(moveStatDirectory, moveDirectory, "stat", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text1Directory, moveDirectory, "text1", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text2Directory, moveDirectory, "text2", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text3Directory, moveDirectory, "text3", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text4Directory, moveDirectory, "text4", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text5Directory, moveDirectory, "text5", ListToRandomise, RandomFile);
+            RandomFile.AddRange(shuffledbackup);
+            RandomGenerator.RandomFiles(text6Directory, moveDirectory, "text6", ListToRandomise, RandomFile);
         }
     }
 }
