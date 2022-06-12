@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace GrandiaRandomizer
 {
     public static class Randomizer
     {
-        public static void RandomizerExecute(string language, bool initialEquipments)
+        public static void RandomizerExecute(string language, bool initialEquipments, string seedFilePath)
         {
+            bool seedFilePathIsNull = false;
+
+            if (string.IsNullOrWhiteSpace(seedFilePath))
+            {
+                seedFilePathIsNull = true;
+            }
+
             string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
 
             string contentDirectory = "";
@@ -25,6 +33,7 @@ namespace GrandiaRandomizer
             string resourcesDirectory = Path.Combine(currentDirectory, "Resources");
             string outDirectory = Path.Combine(currentDirectory, "out");
             string spoilLogDirectory = Path.Combine(currentDirectory, "SpoilLog");
+            string seedDirectory = Path.Combine(currentDirectory, "Seed");
 
 
             string moveDirectory = Path.Combine(buildDirectory, "MOVE");
@@ -44,7 +53,9 @@ namespace GrandiaRandomizer
 
             string bbgPath = Path.Combine(contentDirectory, "BATLE");
 
-            string spoilerLog = $@"{spoilLogDirectory}\SpoilerLog.csv";
+            string dateTime = DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss");
+            string spoilerLog = $@"{spoilLogDirectory}\SpoilerLog_{dateTime}.csv";
+            string seed = $@"{seedDirectory}\Seed_{dateTime}.json";
             string windtFile = Path.Combine(contentDirectory, "FIELD", "windt.bin");
             string windtCD2File = Path.Combine(contentDirectory, "FIELD", "windt.bin.cd2");
             string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
@@ -91,12 +102,29 @@ namespace GrandiaRandomizer
             DeleteCreate.DeleteFolders(text6Directory);
             DeleteCreate.DeleteFolders(itemsDirectory);
             DeleteCreate.DeleteFolders(outDirectory);
-            DeleteCreate.DeleteFolders(spoilLogDirectory);
+
+
+            if (!Directory.Exists(spoilLogDirectory))
+            {
+                Directory.CreateDirectory(spoilLogDirectory);
+            }
+
+
+            if (!Directory.Exists(seedDirectory))
+            {
+                Directory.CreateDirectory(seedDirectory);
+            }
 
             string outputFinalFilesPath = Path.Combine(outDirectory);
 
             //backupOriginalFiles
             ZipUnzip.UnzipOriginalFiles();
+
+            //Seed
+            if (seedFilePathIsNull)
+            {
+                File.WriteAllText(seed, "");
+            }
 
             //Extract Items and Text from specific hexa position.
             Extract.ExtractWindtAndStat(windtFile, itemsDirectory, windtPosition, "windt");
@@ -110,7 +138,7 @@ namespace GrandiaRandomizer
             Extract.ExtractText3(text2File, text6Directory, text3Position, "text6");
 
             List<string> listToNotRandomize = new List<string>();
-            listToNotRandomize = Items.ItemsList(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, initialEquipments);
+            listToNotRandomize = Items.ItemsList(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, initialEquipments, seedFilePathIsNull, seedFilePath, seed);
 
 
             foreach (var file in listToNotRandomize)
@@ -135,25 +163,22 @@ namespace GrandiaRandomizer
             HexaCorrection.HexaNumberCorrection(moveDirectory, "stat");
 
             //SpoilerLog
-            if (File.Exists($@"{spoilerLog}\SpoilerLog.csv"))
-            {
-                File.Delete(spoilerLog);
-            }
-            else
+            if (!seedFilePathIsNull)
             {
                 File.WriteAllText(spoilerLog, "ID;Name;Description");
-            }
 
-            switch (language)
-            {
-                case "Français":
-                    SpoilerLogGeneration.SpoilerLogFrenchCharactereCorrection(spoilerLog, moveDirectory, "text2");
-                    break;
-                case "English":
-                    SpoilerLogGeneration.SpoilerLog(spoilerLog, moveDirectory, "text2");
-                    break;
-                default: break;
+                switch (language)
+                {
+                    case "Français":
+                        SpoilerLogGeneration.SpoilerLogFrenchCharactereCorrection(spoilerLog, moveDirectory, "text2");
+                        break;
+                    case "English":
+                        SpoilerLogGeneration.SpoilerLog(spoilerLog, moveDirectory, "text2");
+                        break;
+                    default: break;
+                }
             }
+            
 
             //Merge Files
             MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, bbgPath, "windt");

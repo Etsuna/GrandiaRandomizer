@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
 
@@ -6,6 +7,8 @@ namespace GrandiaRandomizer
 {
     public partial class Form1 : Form
     {
+        private string FileSeedPath { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -24,11 +27,11 @@ namespace GrandiaRandomizer
 
             bool initialEquipments = checkBox3.Checked;
 
-            Randomizer.RandomizerExecute(language, initialEquipments);
+            Randomizer.RandomizerExecute(language, initialEquipments, FileSeedPath);
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.3";
+            popup.TitleText = "Grandia Randomize V1.4";
 
             if (language == "English")
             {
@@ -82,20 +85,6 @@ namespace GrandiaRandomizer
             
         }
 
-        private void checkBox2_Checked(object sender, EventArgs e)
-        {
-            
-        }
-        private void checkBox2_Unchecked(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox3_Checked(object sender, EventArgs e)
         {
             
@@ -115,7 +104,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.3";
+            popup.TitleText = "Grandia Randomize V1.4";
 
             if (language == "English")
             {
@@ -132,6 +121,53 @@ namespace GrandiaRandomizer
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
+            string seedDirectory = $@"{Path.Combine(currentDirectory, "Seed")}";
+
+            if (Directory.Exists(seedDirectory))
+            {
+                currentDirectory = seedDirectory;
+            }
+            
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = currentDirectory;
+                openFileDialog.Filter = "txt files (*.json)|*.json";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                openFileDialog.ToString();
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    if(!filePath.Contains("Seed_"))
+                    {
+                        MessageBox.Show("File Error, Select a seed file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        fileContent = string.Empty;
+                        return;
+                    }
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            FileSeedPath = filePath;
         }
     }
 }

@@ -39,6 +39,7 @@ namespace GrandiaRandomizer
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,9 +59,9 @@ namespace GrandiaRandomizer
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(179, 138);
+            this.button2.Location = new System.Drawing.Point(230, 139);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 44);
+            this.button2.Size = new System.Drawing.Size(84, 24);
             this.button2.TabIndex = 0;
             this.button2.Text = "Randomizer";
             this.button2.UseVisualStyleBackColor = true;
@@ -70,7 +71,7 @@ namespace GrandiaRandomizer
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GrandiaRandomizer.Properties.Resources.tv_twitch_icon_1;
-            this.pictureBox1.Location = new System.Drawing.Point(411, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(402, 118);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +83,7 @@ namespace GrandiaRandomizer
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::GrandiaRandomizer.Properties.Resources.CLIPLY_372109260_TWITTER_LOGO_400;
-            this.pictureBox2.Location = new System.Drawing.Point(360, 139);
+            this.pictureBox2.Location = new System.Drawing.Point(351, 118);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,7 +116,7 @@ namespace GrandiaRandomizer
             // 
             this.button1.Location = new System.Drawing.Point(12, 139);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 44);
+            this.button1.Size = new System.Drawing.Size(133, 24);
             this.button1.TabIndex = 9;
             this.button1.Text = "Restore Original Files";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,12 +143,23 @@ namespace GrandiaRandomizer
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(151, 139);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(73, 24);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Load Seed";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(468, 194);
+            this.ClientSize = new System.Drawing.Size(459, 173);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
@@ -166,7 +178,7 @@ namespace GrandiaRandomizer
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grandia Randomizer 1.3";
+            this.Text = "Grandia Randomizer 1.4";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -186,6 +198,7 @@ namespace GrandiaRandomizer
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button3;
     }
 }
 
