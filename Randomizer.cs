@@ -163,7 +163,7 @@ namespace GrandiaRandomizer
             HexaCorrection.HexaNumberCorrection(moveDirectory, "stat");
 
             //SpoilerLog
-            if (!seedFilePathIsNull)
+            if (seedFilePathIsNull)
             {
                 File.WriteAllText(spoilerLog, "ID;Name;Description");
 
