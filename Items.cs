@@ -14,11 +14,17 @@ namespace GrandiaRandomizer
             public List<string> ID { get; set; }
         }
 
-        public static List<ParamJson> Alldata { get; set; } = new List<ParamJson>();
+        public static List<ParamJson> Alldata = new List<ParamJson>();
 
         public static List<string> ItemsList(string moveItemDirectory, string moveDirectory, string moveStatDirectory, string text1Directory, string text2Directory, string text3Directory,
             string text4Directory, string text5Directory, string text6Directory, bool initialEquipments, bool seedFilePathIsNull, string seedFilePath, string seedSaveFile)
         {
+
+            if(Alldata.Count > 0)
+            {
+                Alldata.Clear();
+            }
+
             List<string> ListToNotRandomize = new List<string>();
             //LIST ITEM
             List<string> ListToRandomise_item_8008 = new List<string>();
@@ -401,7 +407,7 @@ namespace GrandiaRandomizer
                 ListToRandomise = ListToRandomiseInt.ConvertAll<string>(x => x.ToString()).ToList();
             }
 
-                if (seedFilePathIsNull)
+            if (seedFilePathIsNull)
             {
                 RandomFile = ListToRandomise.OrderBy(item => rng.Next()).ToList();
                 JsonSerialisation(nameList, RandomFile, seedSaveFile);
