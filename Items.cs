@@ -410,6 +410,9 @@ namespace GrandiaRandomizer
             if (seedFilePathIsNull)
             {
                 RandomFile = ListToRandomise.OrderBy(item => rng.Next()).ToList();
+                ListToRandomiseInt = ListToRandomise.Select(int.Parse).ToList();
+                ListToRandomiseInt.Sort();
+                ListToRandomise = ListToRandomiseInt.ConvertAll<string>(x => x.ToString()).ToList();
                 JsonSerialisation(nameList, RandomFile, seedSaveFile);
             }
 
