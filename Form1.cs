@@ -31,7 +31,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.4";
+            popup.TitleText = "Grandia Randomize V1.5";
 
             if (language == "English")
             {
@@ -104,7 +104,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.4";
+            popup.TitleText = "Grandia Randomize V1.5";
 
             if (language == "English")
             {
