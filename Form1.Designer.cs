@@ -40,6 +40,8 @@ namespace GrandiaRandomizer
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -104,7 +106,7 @@ namespace GrandiaRandomizer
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(267, 73);
+            this.checkBox1.Location = new System.Drawing.Point(267, 93);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 19);
             this.checkBox1.TabIndex = 7;
@@ -135,7 +137,7 @@ namespace GrandiaRandomizer
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(267, 48);
+            this.checkBox3.Location = new System.Drawing.Point(267, 68);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(191, 19);
             this.checkBox3.TabIndex = 11;
@@ -153,12 +155,38 @@ namespace GrandiaRandomizer
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Difficulty :";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Very Easy",
+            "Easy",
+            "Normal",
+            "Hard",
+            "Very Hard"});
+            this.comboBox2.Location = new System.Drawing.Point(338, 39);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(85, 23);
+            this.comboBox2.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(459, 173);
+            this.ClientSize = new System.Drawing.Size(460, 173);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.pictureBox3);
@@ -199,6 +227,8 @@ namespace GrandiaRandomizer
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

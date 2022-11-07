@@ -17,17 +17,19 @@ namespace GrandiaRandomizer
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var language = comboBox1.SelectedItem.ToString();
+            var difficulty = comboBox2.SelectedItem.ToString();
 
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
             bool initialEquipments = checkBox3.Checked;
 
-            Randomizer.RandomizerExecute(language, initialEquipments, FileSeedPath);
+            Randomizer.RandomizerExecute(language, initialEquipments, FileSeedPath, difficulty);
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
@@ -97,6 +99,7 @@ namespace GrandiaRandomizer
         private void button1_Click_1(object sender, EventArgs e)
         {
             var language = comboBox1.SelectedItem.ToString();
+            var difficulty = comboBox2.SelectedItem.ToString();
 
             ZipUnzip.UnzipOriginalFiles();
 
@@ -168,6 +171,11 @@ namespace GrandiaRandomizer
             }
 
             FileSeedPath = filePath;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

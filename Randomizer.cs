@@ -6,7 +6,7 @@ namespace GrandiaRandomizer
 {
     public static class Randomizer
     {
-        public static void RandomizerExecute(string language, bool initialEquipments, string seedFilePath)
+        public static void RandomizerExecute(string language, bool initialEquipments, string seedFilePath, string difficulty)
         {
             bool seedFilePathIsNull = false;
 
@@ -59,6 +59,7 @@ namespace GrandiaRandomizer
             string windtFile = Path.Combine(contentDirectory, "FIELD", "windt.bin");
             string windtCD2File = Path.Combine(contentDirectory, "FIELD", "windt.bin.cd2");
             string statFile = Path.Combine(contentDirectory, "BATLE", "STAT.bin");
+            string mdatFile = Path.Combine(contentDirectory, "BATLE", "M_DAT.bin");
             string text1File = "";
             string text2File = "";
 
@@ -124,6 +125,15 @@ namespace GrandiaRandomizer
             if (seedFilePathIsNull)
             {
                 File.WriteAllText(seed, "");
+            }
+
+            //ExtratDataDevOnly
+            //GetHexPositionFromMdat.ExtractMdat(mdatFile);
+
+            //SetDifficulty
+            if(difficulty is not ("Normal"))
+            {
+                SetDifficulty.Difficulty(difficulty, mdatFile);
             }
 
             //Extract Items and Text from specific hexa position.
