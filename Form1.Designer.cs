@@ -61,7 +61,7 @@ namespace GrandiaRandomizer
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(230, 139);
+            this.button2.Location = new System.Drawing.Point(248, 139);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 24);
             this.button2.TabIndex = 0;
@@ -149,7 +149,7 @@ namespace GrandiaRandomizer
             // 
             this.button3.Location = new System.Drawing.Point(151, 139);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 24);
+            this.button3.Size = new System.Drawing.Size(91, 24);
             this.button3.TabIndex = 12;
             this.button3.Text = "Load Seed";
             this.button3.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace GrandiaRandomizer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(271, 42);
+            this.label2.Location = new System.Drawing.Point(267, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 13;
@@ -184,7 +184,7 @@ namespace GrandiaRandomizer
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(460, 173);
+            this.ClientSize = new System.Drawing.Size(468, 173);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
@@ -206,7 +206,7 @@ namespace GrandiaRandomizer
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grandia Randomizer 1.5";
+            this.Text = "Grandia Randomizer 1.6";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -33,7 +33,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.5";
+            popup.TitleText = "Grandia Randomize V1.6";
 
             if (language == "English")
             {
@@ -50,7 +50,23 @@ namespace GrandiaRandomizer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem.ToString() is "English")
+            {
+                label1.Text = "Language";
+                label2.Text = "Difficulty";
+                checkBox3.Text = "Randomize Initial Equipments ?";
+                button1.Text = "Restore Original Files";
+                button3.Text = "Load Seed";
+            }
 
+            if(comboBox1.SelectedItem.ToString() is "Français")
+            {
+                label1.Text = "Langage";
+                label2.Text = "Difficulté";
+                checkBox3.Text = "Randomizer l'équipment initial ?";
+                button1.Text = "Restorer les fichiers";
+                button3.Text = "Changer Seed";
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -80,20 +96,20 @@ namespace GrandiaRandomizer
 
         private void checkBox1_Checked(object sender, EventArgs e)
         {
-            
+
         }
         private void checkBox1_Unchecked(object sender, EventArgs e)
         {
-            
+
         }
 
         private void checkBox3_Checked(object sender, EventArgs e)
         {
-            
+
         }
         private void checkBox3_Unchecked(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -107,7 +123,7 @@ namespace GrandiaRandomizer
 
             PopupNotifier popup = new PopupNotifier();
             popup.Image = Properties.Resources.GrandiaRandomizerIcon.ToBitmap();
-            popup.TitleText = "Grandia Randomize V1.5";
+            popup.TitleText = "Grandia Randomize V1.6";
 
             if (language == "English")
             {
@@ -135,7 +151,7 @@ namespace GrandiaRandomizer
             {
                 currentDirectory = seedDirectory;
             }
-            
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
 
@@ -153,7 +169,7 @@ namespace GrandiaRandomizer
                     //Get the path of specified file
                     filePath = openFileDialog.FileName;
 
-                    if(!filePath.Contains("Seed_"))
+                    if (!filePath.Contains("Seed_"))
                     {
                         MessageBox.Show("File Error, Select a seed file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         fileContent = string.Empty;
