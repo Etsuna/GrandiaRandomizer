@@ -469,26 +469,43 @@ namespace GrandiaRandomizer
                     var VIT = (double)reader.ReadInt16();
                     var WIT = (double)reader.ReadInt16();
                     var AGI = (double)reader.ReadInt16();
+                    var Unknow1 = (double)reader.ReadInt16();
+                    var EXP = (double)reader.ReadInt16();
+                    var GP = (double)reader.ReadInt16();
+                    var Unknow2 = (double)reader.ReadByte();
+                    var Unknow3 = (double)reader.ReadByte();
+                    var ItemDrop1 = (double)reader.ReadInt16();
+                    var ItemDrop2 = (double)reader.ReadInt16();
+                    var ItemDrop1Pourcent = (double)reader.ReadByte();
+                    var ItemDrop2Pourcent = (double)reader.ReadByte();
+                    var MP1 = (double)reader.ReadByte();
+                    var MP2 = (double)reader.ReadByte();
+                    var MP3 = (double)reader.ReadByte();
+                    var MagicPWR = (double)reader.ReadByte();
 
                     HP = Math.Round(HP * difficultyMultiplicator);
                     STR = Math.Round(STR * difficultyMultiplicator);
                     VIT = Math.Round(VIT * difficultyMultiplicator);
                     WIT = Math.Round(WIT * difficultyMultiplicator);
                     AGI = Math.Round(AGI * difficultyMultiplicator);
+                    MagicPWR = Math.Round(MagicPWR * difficultyMultiplicator);
 
                     reader.BaseStream.Position = enemyPosition;
 
                     reader.Close();
 
-                    WriteData(mdatFilePath, enemyPosition + 0x02, HP);
-                    WriteData(mdatFilePath, enemyPosition + 0x04, STR);
-                    WriteData(mdatFilePath, enemyPosition + 0x06, VIT);
-                    WriteData(mdatFilePath, enemyPosition + 0x08, WIT);
-                    WriteData(mdatFilePath, enemyPosition + 0x0A, AGI);
+                    WriteData2Bytes(mdatFilePath, enemyPosition + 0x02, HP);
+                    WriteData2Bytes(mdatFilePath, enemyPosition + 0x04, STR);
+                    WriteData2Bytes(mdatFilePath, enemyPosition + 0x06, VIT);
+                    WriteData2Bytes(mdatFilePath, enemyPosition + 0x08, WIT);
+                    WriteData2Bytes(mdatFilePath, enemyPosition + 0x0A, AGI);
+
+                    WriteDataByte(mdatFilePath, enemyPosition + 0x1C, MagicPWR);
                 }
             }
         }
-        public static void WriteData(string dataFile, int hexaPosition, double value)
+
+        public static void WriteData2Bytes(string dataFile, int hexaPosition, double value)
         {
             using (Stream s = File.Open(dataFile, FileMode.Open))
             using (BinaryWriter writer = new BinaryWriter(s))
@@ -497,6 +514,20 @@ namespace GrandiaRandomizer
                 byte[] data = new byte[2];
                 data[0] = (byte)((int)value & 0xFF);
                 data[1] = (byte)(((int)value >> 8) & 0xFF);
+
+                s.Write(data.ToArray(), 0, data.ToArray().Length);
+                string result = Encoding.UTF8.GetString(data.ToArray());
+            }
+        }
+
+        public static void WriteDataByte(string dataFile, int hexaPosition, double value)
+        {
+            using (Stream s = File.Open(dataFile, FileMode.Open))
+            using (BinaryWriter writer = new BinaryWriter(s))
+            {
+                s.Position = hexaPosition;
+                byte[] data = new byte[1];
+                data[0] = (byte)((int)value & 0xFF);
 
                 s.Write(data.ToArray(), 0, data.ToArray().Length);
                 string result = Encoding.UTF8.GetString(data.ToArray());
