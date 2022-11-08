@@ -16,15 +16,19 @@ namespace GrandiaRandomizer
             switch (difficulty)
             {
                 case "Very Easy":
+                case "Très Facile":
                     difficultyMultiplicator = 0.50;
                     break;
                 case "Easy":
+                case "Facile":
                     difficultyMultiplicator = 0.75;
                     break;
                 case "Hard":
+                case "Difficile":
                     difficultyMultiplicator = 1.25;
                     break;
                 case "Very Hard":
+                case "Très Difficile":
                     difficultyMultiplicator = 1.50;
                     break;
                 default:

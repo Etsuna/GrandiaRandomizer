@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
@@ -23,7 +24,7 @@ namespace GrandiaRandomizer
         private void button1_Click(object sender, EventArgs e)
         {
             var language = comboBox1.SelectedItem.ToString();
-            var difficulty = comboBox2.SelectedItem.ToString();
+            var difficulty = ((KeyValuePair<string, string>)comboBox2.SelectedItem).Value;
 
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
@@ -50,8 +51,16 @@ namespace GrandiaRandomizer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+
             if (comboBox1.SelectedItem.ToString() is "English")
             {
+                comboSource.Add("0", "Very Easy");
+                comboSource.Add("1", "Easy");
+                comboSource.Add("2", "Normal");
+                comboSource.Add("3", "Hard");
+                comboSource.Add("4", "Very Hard");
+
                 label1.Text = "Language";
                 label2.Text = "Difficulty";
                 checkBox3.Text = "Randomize Initial Equipments ?";
@@ -61,12 +70,23 @@ namespace GrandiaRandomizer
 
             if(comboBox1.SelectedItem.ToString() is "Français")
             {
+                comboSource.Add("0", "Très Facile");
+                comboSource.Add("1", "Facile");
+                comboSource.Add("2", "Normal");
+                comboSource.Add("3", "Difficile");
+                comboSource.Add("4", "Très Difficile");
+
                 label1.Text = "Langage";
                 label2.Text = "Difficulté";
                 checkBox3.Text = "Randomizer l'équipment initial ?";
                 button1.Text = "Restorer les fichiers";
                 button3.Text = "Changer Seed";
             }
+
+            comboBox2.DataSource = new BindingSource(comboSource, null);
+            comboBox2.DisplayMember = "Value";
+            comboBox2.ValueMember = "Key";
+            comboBox2.SelectedIndex = 2;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

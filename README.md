@@ -11,7 +11,7 @@
 2. Entrez dans le dossier "GrandiaRandomizer".
 3. Executez "GrandiaRandomizer.exe".
 4. Choisissez votre langue et choisissez si vous voulez randomizer les équipements initiaux. Le DebugMenu n'est pas nécessaire (et c'est tricher).
-5. Choisissez la difficulté. Pour chaques enemies, les stats sont changé : Very Easy = -50%, Easy = -25%, Hard = +25%, Very Hard = +50%.
+5. Choisissez la difficulté. Pour chaques enemies, les stats sont changé : Très Facile = -50%, Facile = -25%, Difficile = +25%, Très Difficile = +50%.
 6. Cliquez sur "Load Seed" (Dossier : GrandiaRandomizer/Seed) si vous voulez charger une seed, puis "Randomizer" pour créer des fichiers aléatoires depuis cette seed. Sinon, cliquez sur "Randomizer" pour créer des nouveaux fichiers aléatoires et un nouveau fichier seed.
 7. Attendez le/la popup en bas à droite de l'écran.
 8. Vous pouvez consulter le SpoilerLog dans le dossier GrandiaRandomizer/SpoilerLog/SpoilerLog.csv (Les objets seront en Français, mais leurs emplacements seront en anglais! ça demande trop de boulot de tout traduire !)
