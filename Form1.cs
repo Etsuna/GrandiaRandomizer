@@ -9,10 +9,19 @@ namespace GrandiaRandomizer
     public partial class Form1 : Form
     {
         private string FileSeedPath { get; set; }
+        private string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
 
         public Form1()
         {
             InitializeComponent();
+            if (File.Exists(Path.Combine(currentDirectory, @"../", "grandia.exe")))
+            {
+                currentDirectory = Path.Combine(currentDirectory, @"../", "grandia.exe");
+            }
+            else
+            {
+                currentDirectory = Path.Combine(currentDirectory, @"../../../../", "grandia.exe");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -25,6 +34,8 @@ namespace GrandiaRandomizer
         {
             var language = comboBox1.SelectedItem.ToString();
             var difficulty = ((KeyValuePair<string, string>)comboBox2.SelectedItem).Value;
+
+            CheckPaths.CheckGrandiaExe(currentDirectory, language);
 
             DebugMenu.DebugMenuCheck(checkBox1.Checked);
 
@@ -80,7 +91,7 @@ namespace GrandiaRandomizer
                 label2.Text = "Difficulté";
                 checkBox3.Text = "Randomizer l'équipment initial ?";
                 button1.Text = "Restorer les fichiers";
-                button3.Text = "Changer Seed";
+                button3.Text = "Charger Seed";
             }
 
             comboBox2.DataSource = new BindingSource(comboSource, null);
@@ -137,6 +148,8 @@ namespace GrandiaRandomizer
             var language = comboBox1.SelectedItem.ToString();
             var difficulty = comboBox2.SelectedItem.ToString();
 
+            CheckPaths.CheckGrandiaExe(currentDirectory, language);
+
             ZipUnzip.UnzipOriginalFiles();
 
             DebugMenu.DebugMenuCheck(false);
@@ -164,8 +177,10 @@ namespace GrandiaRandomizer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string currentDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory()));
+            var language = comboBox1.SelectedItem.ToString();
             string seedDirectory = $@"{Path.Combine(currentDirectory, "Seed")}";
+
+            CheckPaths.CheckGrandiaExe(currentDirectory, language);
 
             if (Directory.Exists(seedDirectory))
             {
@@ -195,6 +210,7 @@ namespace GrandiaRandomizer
                         fileContent = string.Empty;
                         return;
                     }
+                    
 
                     //Read the contents of the file into a stream
                     var fileStream = openFileDialog.OpenFile();
@@ -202,6 +218,16 @@ namespace GrandiaRandomizer
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
                         fileContent = reader.ReadToEnd();
+                    }
+
+                    if(language is "English")
+                    {
+                        MessageBox.Show("The file has been loaded correctly, select the difficulty and click on Randomizer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    if (language is "Français")
+                    {
+                        MessageBox.Show("Le fichier a été chargé correctement, Selectionnez la difficulté et cliquez sur Randomizer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

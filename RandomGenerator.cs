@@ -8,8 +8,6 @@ namespace GrandiaRandomizer
     {
         public static void RandomFiles(string entryPath, string outPath, string extension, List<string> ListToRandomise, List<string> RandomFile)
         {
-
-
             foreach (string file in ListToRandomise)
             {
                 var fileOutput = RandomFile.First();

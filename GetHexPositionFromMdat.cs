@@ -209,7 +209,6 @@ namespace GrandiaRandomizer
             "Evil Gaia",
             };
 
-
             foreach (var enemy in enemyList)
             {
                 var convert = Encoding.UTF8.GetBytes(enemy);
@@ -246,8 +245,6 @@ namespace GrandiaRandomizer
                             br.BaseStream.Position = br.BaseStream.Position - intAgain;
                         }
                     }
-
-
                 }
             }
         }

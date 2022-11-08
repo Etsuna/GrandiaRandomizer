@@ -104,12 +104,10 @@ namespace GrandiaRandomizer
             DeleteCreate.DeleteFolders(itemsDirectory);
             DeleteCreate.DeleteFolders(outDirectory);
 
-
             if (!Directory.Exists(spoilLogDirectory))
             {
                 Directory.CreateDirectory(spoilLogDirectory);
             }
-
 
             if (!Directory.Exists(seedDirectory))
             {
@@ -150,7 +148,6 @@ namespace GrandiaRandomizer
             List<string> listToNotRandomize = new List<string>();
             listToNotRandomize = Items.ItemsList(moveItemDirectory, moveDirectory, moveStatDirectory, text1Directory, text2Directory, text3Directory, text4Directory, text5Directory, text6Directory, initialEquipments, seedFilePathIsNull, seedFilePath, seed);
 
-
             foreach (var file in listToNotRandomize)
             {
                 File.Move($@"{moveItemDirectory}\{file}.windt", $@"{moveDirectory}\{file}.windt");
@@ -189,7 +186,6 @@ namespace GrandiaRandomizer
                 }
             }
             
-
             //Merge Files
             MergeFilesGeneration.MergeData(windtFile, windtPosition, moveDirectory, bbgPath, "windt");
             MergeFilesGeneration.MergeData(windtCD2File, windtCD2Position, moveDirectory, bbgPath, "windt");
