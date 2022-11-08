@@ -30,6 +30,9 @@ namespace GrandiaRandomizer
                 case "Très Difficile":
                     difficultyMultiplicator = 1.50;
                     break;
+                case "Challenge":
+                    difficultyMultiplicator = 2;
+                    break;
                 default:
                     break;
             }

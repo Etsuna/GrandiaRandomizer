@@ -59,7 +59,6 @@ namespace GrandiaRandomizer
             popup.Popup();
         }
 
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Dictionary<string, string> comboSource = new Dictionary<string, string>();
@@ -71,9 +70,10 @@ namespace GrandiaRandomizer
                 comboSource.Add("2", "Normal");
                 comboSource.Add("3", "Hard");
                 comboSource.Add("4", "Very Hard");
+                
 
-                label1.Text = "Language";
-                label2.Text = "Difficulty";
+                label1.Text = "Language :";
+                label2.Text = "Difficulty :";
                 checkBox3.Text = "Randomize Initial Equipments ?";
                 button1.Text = "Restore Original Files";
                 button3.Text = "Load Seed";
@@ -87,13 +87,14 @@ namespace GrandiaRandomizer
                 comboSource.Add("3", "Difficile");
                 comboSource.Add("4", "Très Difficile");
 
-                label1.Text = "Langage";
-                label2.Text = "Difficulté";
+                label1.Text = "Langage :";
+                label2.Text = "Difficulté :";
                 checkBox3.Text = "Randomizer l'équipment initial ?";
                 button1.Text = "Restorer les fichiers";
                 button3.Text = "Charger Seed";
             }
 
+            comboSource.Add("5", "Challenge");
             comboBox2.DataSource = new BindingSource(comboSource, null);
             comboBox2.DisplayMember = "Value";
             comboBox2.ValueMember = "Key";
@@ -146,7 +147,6 @@ namespace GrandiaRandomizer
         private void button1_Click_1(object sender, EventArgs e)
         {
             var language = comboBox1.SelectedItem.ToString();
-            var difficulty = comboBox2.SelectedItem.ToString();
 
             CheckPaths.CheckGrandiaExe(currentDirectory, language);
 
@@ -210,7 +210,6 @@ namespace GrandiaRandomizer
                         fileContent = string.Empty;
                         return;
                     }
-                    
 
                     //Read the contents of the file into a stream
                     var fileStream = openFileDialog.OpenFile();
@@ -220,7 +219,10 @@ namespace GrandiaRandomizer
                         fileContent = reader.ReadToEnd();
                     }
 
-                    if(language is "English")
+                    checkBox3.Checked = false;
+                    checkBox3.Enabled = false;
+
+                    if (language is "English")
                     {
                         MessageBox.Show("The file has been loaded correctly, select the difficulty and click on Randomizer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
